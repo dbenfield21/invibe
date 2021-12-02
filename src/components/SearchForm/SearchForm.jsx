@@ -6,6 +6,8 @@ const SearchForm = (props) => {
     location: ""
   })
   
+  const navigate = useNavigate()
+
   const handleChange = e => {
     setFormData({
       ...formData,
@@ -16,12 +18,18 @@ const SearchForm = (props) => {
     e.preventDefault()
     try {
       props.handleSearch(formData)
-      // navigate('/')
+      navigate('/locationResults')
     } catch (err) {
       console.log(err)
     }
   }
-  
+
+  const { location } = formData
+
+  const isFormInvalid = () => {
+    return !(location)
+  }
+
   return(
     <form 
       action=""
@@ -37,7 +45,7 @@ const SearchForm = (props) => {
         onChange={handleChange}
       />
       <div>
-        <button >Search</button>
+      <button disabled={isFormInvalid()}>Search</button>
       </div>
     </form>
   )
