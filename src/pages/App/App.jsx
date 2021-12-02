@@ -6,6 +6,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import SearchLocations from '../SearchLocations/SearchLocations'
+import LocationResults from '../LocationResults/LocationResults'
 import * as authService from '../../services/authService'
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
 				<Route path="/search" element={<SearchLocations handleSearch={handleSearch}/> } />
+				<Route path="/locationResults" element={<LocationResults />}></Route>
 			</Routes>
 		</>
 	);
