@@ -1,5 +1,5 @@
 function getLocation(location) {
-  return fetch(`/api/${location}`)
+  return fetch(`/api/resources/${location}`)
   .then(res => res.json())
 }
 

@@ -18,7 +18,7 @@ const SearchForm = (props) => {
     e.preventDefault()
     try {
       props.handleSearch(formData)
-      navigate('/locationResults')
+      
     } catch (err) {
       console.log(err)
     }
@@ -32,7 +32,6 @@ const SearchForm = (props) => {
 
   return(
     <form 
-      action=""
       autoComplete="off"
       onSubmit={handleSubmit}
     >
@@ -40,7 +39,7 @@ const SearchForm = (props) => {
       <input
       placeholder="city / state"
         type="text"
-        value={FormData.location}
+        value={location}
         name="location"
         onChange={handleChange}
       />
@@ -52,3 +51,5 @@ const SearchForm = (props) => {
 }
 
 export default SearchForm
+
+// pass function for handling searching 
