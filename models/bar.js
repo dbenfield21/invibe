@@ -4,7 +4,7 @@ const barSchema = new mongoose.Schema({
     name: String,
     address: String,
     imageURL: String,
-    reviews: [{type: mongoose.Schema.Types.ObjectId, ref: 'Cocktail'}]
+    cocktails: [{type: mongoose.Schema.Types.ObjectId, ref: 'Cocktail'}]
 })
 
 const Bar = mongoose.model('Bar', barSchema)

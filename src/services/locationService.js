@@ -1,11 +1,17 @@
-function getLocation(location) {
+function getLocation(location) {  
   return fetch(`/api/resources/${location}`)
+  .then(res => res.json())
+}
+
+function getBarDetails(id) {  // cocktails-route(Merkis) branch; this function gets us an individual bar's details
+  return fetch(`/api/resources/${id}`)
   .then(res => res.json())
 }
 
 
 export {
-  getLocation
+  getLocation,
+  getBarDetails
 }
 
 // comment 
