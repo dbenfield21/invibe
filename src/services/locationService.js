@@ -10,7 +10,8 @@ function getBarDetails(id) {  // cocktails-route(Merkis) branch; this function g
 
 
 export {
-  getLocation
+  getLocation,
+  getBarDetails
 }
 
 // comment 
