@@ -6,7 +6,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import SearchLocations from '../SearchLocations/SearchLocations'
-import LocationResults from '../LocationResults/LocationResults'
+// import LocationResults from '../LocationResults/LocationResults'
 import * as authService from '../../services/authService'
 
 const App = () => {
@@ -23,10 +23,12 @@ const App = () => {
 		setUser(authService.getUser())
 	}
 
-	const handleSearch = () => {
-		console.log("SEARCH")
-	}
+	
 
+	
+// all functions to change a profile live in App
+
+	
 
 	return (
 		<>
@@ -36,8 +38,8 @@ const App = () => {
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
-				<Route path="/search" element={<SearchLocations handleSearch={handleSearch}/> } />
-				<Route path="/locationResults" element={<LocationResults />}></Route>
+				<Route path="/search" element={<SearchLocations /> } />
+				{/* <Route path="/locationResults" element={<LocationResults />}></Route> */}
 			</Routes>
 		</>
 	);
