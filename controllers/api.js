@@ -12,9 +12,17 @@ function showBars(req, res) {
     })
 }
 
+function show(req, res) {
+    axios.get(`https://api.yelp.com/v3/businesses/${req.params.id}`, {headers: {Authorization: `Bearer ${process.env.API_KEY}`}})
+    .then(apiResponse => {
+        res.json(apiResponse.data)
+    })
+}
+
 
 
 export {
     index, 
     showBars,
+    show
 }
