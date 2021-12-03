@@ -38,4 +38,4 @@ const SearchLocations = (props) => {
 
 export default SearchLocations
 
-// results state here and import funciton to make API call. 
+// results state here and import function to make API call. 
