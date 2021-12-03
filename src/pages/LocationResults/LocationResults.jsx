@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getLocation } from '../../services/locationService';
 
 
+
 const LocationResults = (props) => {
 
   const [formData, setFormData] = useState({
