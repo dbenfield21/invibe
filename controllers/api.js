@@ -1,5 +1,5 @@
 import axios from "axios"
-import Bar from "../models/bar.js"
+import { Bar } from "../models/bar.js"
 
 function index(req, res){
     res.send("INDEX PAGE FOR API RESOURCES")
