@@ -19,6 +19,13 @@ const SearchLocations = (props) => {
   return (
     <main>
       <SearchForm handleSearch={handleSearch} />
+      {locationResults.map(bar => 
+        <div key={bar.id}>
+          <h2>{bar.name}</h2>
+            <p>{bar.location.display_address}</p>
+            <a href={`${bar.url}`}>Link</a>
+        </div>
+        )}
     </main>
   )
 }

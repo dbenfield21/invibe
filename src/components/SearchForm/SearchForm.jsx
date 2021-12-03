@@ -5,9 +5,11 @@ const SearchForm = (props) => {
   const [formData, setFormData] = useState({
     location: ""
   })
-  
-  const navigate = useNavigate()
 
+  // const [defaultFormValue, setDefaultFormValue] = useState({
+  //   formDefaultValue: "city / state"
+  // })
+  
   const handleChange = e => {
     setFormData({
       ...formData,
@@ -16,14 +18,18 @@ const SearchForm = (props) => {
   }
   const handleSubmit = async e => {
     e.preventDefault()
+    // setDefaultFormValue({
+    //   formDefaultValue: "city / state"
+    // })
     try {
       props.handleSearch(formData)
       
     } catch (err) {
       console.log(err)
-    }
+    } 
   }
 
+  // const { formDefaultValue } = defaultFormValue
   const { location } = formData
 
   const isFormInvalid = () => {
@@ -37,7 +43,7 @@ const SearchForm = (props) => {
     >
       <h1>Where to?</h1>
       <input
-      placeholder="city / state"
+        placeholder= "City / State"
         type="text"
         value={location}
         name="location"
