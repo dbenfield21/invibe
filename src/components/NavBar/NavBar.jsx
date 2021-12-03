@@ -17,6 +17,9 @@ const NavBar = ({ user, handleLogout }) => {
 							<li>
 								<Link to='' onClick={handleLogout}>LOG OUT</Link>
 							</li>
+							<li>
+								<Link to="/search">Bar Finder</Link>
+							</li>
 						</ul>
 					</div>
 				</nav>
