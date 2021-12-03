@@ -4,6 +4,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import logger from 'morgan'
 import cors from 'cors'
+import tailwindcss from 'tailwindcss'
 
 import('./config/database.js')
 
