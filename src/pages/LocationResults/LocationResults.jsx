@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-=======
 import React, { useState } from 'react';
 import { getLocation } from '../../services/locationService';
->>>>>>> cadcae32b5d5da8aa48aa4d250ba0d688769d148
+
 
 
 const LocationResults = (props) => {
