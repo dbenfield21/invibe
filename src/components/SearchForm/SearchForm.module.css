@@ -1,0 +1,20 @@
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.searchItems {
+  display: flex;
+  flex-direction: row;
+}
+
+.mainImage {
+  height: 30vh;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  padding-bottom: 3rem;
+}
