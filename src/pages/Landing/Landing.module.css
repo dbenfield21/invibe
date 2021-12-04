@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Paytone+One&display=swap');
+
+h1 {
+  text-align: center;
+}
+
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+
+.inVibe {
+  font-family: 'Libre Baskerville', serif;
 }
