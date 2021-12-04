@@ -1,6 +1,7 @@
 import SearchForm from "../../components/SearchForm/SearchForm"
 import { getLocation } from "../../services/locationService"
 import React, { useState } from 'react';
+import { Link } from "react-router-dom"
 
 
 const SearchLocations = (props) => {
@@ -21,7 +22,7 @@ const SearchLocations = (props) => {
       <SearchForm handleSearch={handleSearch} />
       {locationResults.map(bar => 
         <div key={bar.id}>
-          <img src={bar.image_url }alt={bar.name} />
+          <Link to="/barDetails" state={bar}><img src={bar.image_url }alt={bar.name} /></Link>
           <h2>{bar.name}</h2>
             <p>{bar.location.display_address}</p>
             {/* FIX MISSING SPACE IN ADDRESS */}
