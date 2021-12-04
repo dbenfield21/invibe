@@ -2,7 +2,7 @@ import SearchForm from "../../components/SearchForm/SearchForm"
 import { getLocation } from "../../services/locationService"
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
-
+import styles from "./SearchLocations.module.css"
 
 const SearchLocations = (props) => {
   const [locationResults, setlocationResults] = useState([])
@@ -20,6 +20,7 @@ const SearchLocations = (props) => {
   return (
     <main>
       <SearchForm handleSearch={handleSearch} />
+      <img className={styles.mainImage}src="https://lh5.googleusercontent.com/proxy/FeyJLfzu7WGGIF32xQhaC3fPC2FpqSW8K9eTjc5JwxMXCTloOsHdKLFDih7PEWgn3pvXxKLzCsojup6Yy2hgNK2s-v0bVBQH7EyS=w1200-h630-p-k-no-nu" alt="question mark" />
       {locationResults.map(bar => 
         <div key={bar.id}>
           <Link to="/barDetails" state={bar}><img src={bar.image_url }alt={bar.name} /></Link>

@@ -1,4 +1,5 @@
-import styles from './Landing.module.css'
+import { Link } from "react-router-dom"
+import styles from './Landing.css'
 
 const Landing = ({user}) => {
   return (
@@ -6,7 +7,7 @@ const Landing = ({user}) => {
       <h1>
         Hello {user ? user.name : "traveler! Log in or sign up above to join us for a delicious cocktail!"} <br/>Welcome to <span className={styles.inVibe}>InVibe</span> 
       </h1>
-      <img className={styles.mainImage} src="https://kitchenswagger.com/wp-content/uploads/2021/04/new-york-sour33-768x1152.jpg" alt="New York Sour" />
+      <Link to="/search"><img className={styles.mainImage} src="https://kitchenswagger.com/wp-content/uploads/2021/04/new-york-sour33-768x1152.jpg" alt="New York Sour" /></Link>
     </main>
   )
 }
