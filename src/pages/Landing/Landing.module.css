@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Paytone+One&display=swap');
 
+html, body {
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
 h1 {
+  font-size: 2.3rem;
   text-align: center;
+  letter-spacing: 1px;
+  line-height: 3.5rem;
+  padding-bottom: .6rem;
 }
 
 .container {
@@ -13,4 +23,11 @@ h1 {
 
 .inVibe {
   font-family: 'Libre Baskerville', serif;
+  font-size: 2.8rem;
+}
+
+.mainImage {
+  border-radius: .5rem;
+  margin: auto;
+  width: 22rem;
 }

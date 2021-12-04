@@ -7,31 +7,31 @@ const NavBar = ({ user, handleLogout }) => {
 		<div >
 			{user ? (
 				<nav>
-					<div className={styles.navBar}>
-							<h4>
-									{user.name}
-							</h4>
-							<h4>
-								<Link to="/search">Bar Finder</Link>
-              </h4>
-							<h4>
-								<Link to="/users">Users</Link>
-							</h4>
-							<h4>
-								<Link to='' onClick={handleLogout}>LOG OUT</Link>
-							</h4>
-					</div>
+					<ul className={`${styles.navBar} ${styles.navBarLoggedIn}`}>
+						<li className={`${styles.navItem} ${styles.gridSpace01}`}>
+									Welcome {user.name}
+						</li>
+						<li className={`${styles.navItem} ${styles.gridSpace02}`}>
+							<Link to='' onClick={handleLogout}>LOG OUT</Link>
+            </li>
+						<li className={`${styles.navItem} ${styles.gridSpace03}`}>
+							<Link to="/users">See Users</Link>
+						</li>
+						<li className={`${styles.navItem} ${styles.gridSpace04}`}>
+							<Link to="/search">Bar Finder</Link>
+						</li>
+					</ul>
 				</nav>
 			) : (
 				<nav>
-					<div className={styles.navBar}>
-							<h4>
-								<Link to="/login">Log In</Link>
-							</h4>
-							<h4>
-								<Link to="/signup">Sign Up</Link>
-							</h4>
-					</div>
+					<ul className={`${styles.navBar} ${styles.navBarLoggedOut}`}>
+						<li className={`${styles.navItem} ${styles.gridSpace01}`}>
+							<Link to="/login">Log In</Link>
+						</li>
+						<li className={`${styles.navItem} ${styles.gridSpace02}`}>
+							<Link to="/signup">Sign Up</Link>
+						</li>
+					</ul>
 				</nav>
 			)}
 		</div>

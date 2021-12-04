@@ -1,8 +1,48 @@
+a {
+  color: rgba(234, 224, 213);
+}
+
 .navBar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-  height: 40px;
+  margin-top: 0;
+}
+
+.navBarLoggedIn {
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "one two"
+      "three four";
+    width: 100%;
+    
+}
+
+.navBarLoggedOut {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "one two";
+    
+}
+
+.navItem {
+  font-size: 1.3rem;
+  list-style: none;
+  padding:  .3rem 0;
+}
+
+.gridSpace01 {
+  grid-area: one;
+}
+
+.gridSpace02 {
+  grid-area: two;
+}
+
+.gridSpace03 {
+  grid-area: three;
+}
+
+.gridSpace04 {
+  grid-area: four;
 }
