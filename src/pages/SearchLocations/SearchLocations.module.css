@@ -1,10 +1,71 @@
-html, body {
+main {
   margin: 0;
   min-height: 100vh;
   overflow: visible;
 }
 
+.resultsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.locationCard {
+  height: 50vh;;
+  width: 80vw;
+  max-width: 95%;
+  margin-bottom: 5rem;
+}
+
+.barInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "one two"
+    "three four"
+    "five six"
+    "seven eight";
+  max-height: 80%;
+  max-width: 100%;
+}
+
+.barImage {
+  max-width: 100%;
+}
+
+.barName {
+  grid-area: one;
+}
+.barLocation {
+  grid-area: two;
+}
+
+.barPhone {
+  grid-area: four;
+}
+
+.barOPen {
+  grid-area: five;
+}
+
+.barRating {
+  grid-area: six;
+}
+
+.barPrice {
+  grid-area: seven;
+}
+
+.barLink {
+  grid-area: eight;
+}
+
 .mainImage {
+  height: 30vh;
   margin: auto;
-  width: 22rem;
+  max-height: 100%;
+  max-width: 100%;
 }

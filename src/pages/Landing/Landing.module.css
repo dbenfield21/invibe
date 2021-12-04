@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Paytone+One&display=swap');
 
-html, body {
+main {
   margin: 0;
   overflow: hidden;
-  height: 100vh;
+  max-height: 100vh;
 }
 
 h1 {
@@ -20,7 +20,6 @@ h1 {
   flex-direction: column;
 }
 
-
 .inVibe {
   font-family: 'Libre Baskerville', serif;
   font-size: 2.8rem;
@@ -28,10 +27,12 @@ h1 {
 
 .mainImage {
   border-radius: .5rem;
+  height: 60vh;
   margin: auto;
-  width: 22rem;
+  max-height: 100%;
+  max-width: 100%;
 }
 
-.mainImageHover {
+/* .mainImageHover {
   box-shadow: 5px 5px 5px rgb(255, 255, 255);
-}
+} */

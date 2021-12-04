@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import styles from './Landing.css'
+import styles from './Landing.module.css'
 
 const Landing = ({user}) => {
   return (

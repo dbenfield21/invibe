@@ -14,7 +14,7 @@ a {
     grid-template-areas:
       "one two"
       "three four";
-    width: 100%;
+    max-width: 100%;
     
 }
 
