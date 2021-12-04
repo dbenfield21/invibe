@@ -9,8 +9,6 @@ const profileSchema = new mongoose.Schema(
     friends: [{type: mongoose.Schema.Types.ObjectId, ref: 'Profile'}] ,
     favBars: [{type: mongoose.Schema.Types.ObjectId, ref: 'Bar'}],
     favLocations: [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}]
-
-
   },
   {
     timestamps: true,

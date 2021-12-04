@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
 const barSchema = new mongoose.Schema({
+    id: String,
     name: String,
     address: String,
     imageURL: String,
