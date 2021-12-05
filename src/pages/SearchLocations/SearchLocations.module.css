@@ -1,0 +1,79 @@
+main {
+  margin: auto;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.searchContainer {
+  margin: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.locationTitle {
+  max-width: 100%;
+}
+
+.resultsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.locationCard {
+  height: 50vh;;
+  width: 80vw;
+  max-width: 95%;
+  margin-bottom: 5rem;
+}
+
+.barInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "one two"
+    "three four"
+    "five six"
+    "seven eight";
+  max-height: 40%;
+  max-width: 100%;
+}
+
+.barImage {
+  max-width: 100%;
+}
+
+.barName {
+  grid-area: one;
+}
+.barLocation {
+  grid-area: two;
+}
+
+.barPhone {
+  grid-area: four;
+}
+
+.barOPen {
+  grid-area: five;
+}
+
+.barRating {
+  grid-area: six;
+}
+
+.barPrice {
+  grid-area: seven;
+}
+
+.barLink {
+  grid-area: eight;
+}
+

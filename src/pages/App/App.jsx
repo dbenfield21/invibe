@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import "./App.css"
 import BarDetails from '../BarDetails/BarDetails'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
