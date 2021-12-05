@@ -28,7 +28,7 @@ const SearchLocations = (props) => {
           <div className={styles.resultsContainer}>
             {locationResults.map(bar => 
               <div key={bar.id} className={styles.locationCard}>
-                <Link to="/barDetails" state={bar}><img className={styles.barImage} src={bar.image_url }alt={bar.name} /></Link>
+                <Link to="/barDetails" state={bar} className={styles.barImageContainer}><img className={styles.barImage} src={bar.image_url }alt={bar.name} /></Link>
                 <div className={styles.barInfoGrid}>
                 <h2 className={styles.barName}>{bar.name}</h2>
                   <p className={styles.barLocation}>{bar.location.display_address}</p>

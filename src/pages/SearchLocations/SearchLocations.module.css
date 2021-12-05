@@ -27,13 +27,16 @@ main {
 }
 
 .locationCard {
-  height: 50vh;;
+  background-color: rgb(22, 35, 43);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  height: 50vh;
   width: 80vw;
   max-width: 95%;
   margin-bottom: 5rem;
 }
 
 .barInfoGrid {
+  border-top: rgb(43, 65, 78) 1px solid;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -42,20 +45,31 @@ main {
     "three four"
     "five six"
     "seven eight";
-  max-height: 40%;
+  max-height: 30%;
   max-width: 100%;
+  margin: 0px 3px 3px;
+}
+
+.barImageContainer {
+  margin: auto;
 }
 
 .barImage {
+  height: 20rem;
+  margin: auto;
   max-width: 100%;
+  object-fit: cover;
 }
 
 .barName {
-  font-size: 2rem;
+  font-size: 1.8rem;
   grid-row: 1 / 3; 
+  margin: 1px 1px 2px 0;
+  
 }
 .barLocation {
   grid-area: two;
+  margin: 3px 1px 0px 0;
 }
 
 .barPhone {
@@ -64,6 +78,7 @@ main {
 
 .barOPen {
   grid-area: five;
+  margin: 4px 0 2px 0;
 }
 
 .barRating {
@@ -72,9 +87,11 @@ main {
 
 .barPrice {
   grid-area: seven;
+  margin: 0 0 2px 0;
 }
 
 .barLink {
   grid-area: eight;
+  margin: 0 0 2px 0;
 }
 
