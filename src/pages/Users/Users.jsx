@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as userService from '../../services/userService'
+import { Link } from 'react-router-dom';
 
-const Users = () => {
+const Users = (props) => {
   const [users, setUsers] = useState([])
 
   useEffect(()=> {
@@ -15,12 +16,13 @@ const Users = () => {
       {users.length ? 
       <>
         {users.map(user=>
-          <p key={user._id}>{user.name}</p>
+          <Link to="/profile" state={user}><p><p key={user._id}>{user.name}</p></p></Link>
         )}
       </>
       :
         <p>An error occured</p>
       }
+      
     </>
   );
 }
