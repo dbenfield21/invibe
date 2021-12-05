@@ -13,7 +13,7 @@ const SearchLocations = (props) => {
       setSearchLocation(locationData.location)
       setlocationResults(locationResults.businesses)
     })
-
+  
   }
   return (
     <main>

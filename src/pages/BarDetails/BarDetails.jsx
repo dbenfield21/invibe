@@ -19,6 +19,7 @@ const BarDetails = (props) => {
       <p>Rating: {bar.rating}</p>
       <p>Price: {bar.price}</p>
       <a href={`${bar.url}`}>Yelp Link</a>
+      <Link to></Link>
     </>
   );
 }

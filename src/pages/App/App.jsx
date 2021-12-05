@@ -25,12 +25,7 @@ const App = () => {
 		setUser(authService.getUser())
 	}
 
-	
-
-	
 // all functions to change a profile live in App
-
-	
 
 	return (
 		<>
@@ -40,7 +35,7 @@ const App = () => {
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
-				<Route path="/search" element={<SearchLocations /> } />
+				<Route path="/search" element={<SearchLocations />} />
 				<Route path="/barDetails" element={<BarDetails />}></Route>
 				{/* <Route path="/locationResults" element={<LocationResults />}></Route> */}
 			</Routes>
