@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import "./App.css"
 import BarDetails from '../BarDetails/BarDetails'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
+import Profile from '../Profile/Profile'
 import SearchLocations from '../SearchLocations/SearchLocations'
-// import LocationResults from '../LocationResults/LocationResults'
 import * as authService from '../../services/authService'
 
 const App = () => {
@@ -41,7 +42,7 @@ const App = () => {
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
 				<Route path="/search" element={<SearchLocations /> } />
 				<Route path="/barDetails" element={<BarDetails />}></Route>
-				{/* <Route path="/locationResults" element={<LocationResults />}></Route> */}
+				<Route path="/profile" element={<Profile user={user} />}></Route>
 			</Routes>
 		</>
 	);

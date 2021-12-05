@@ -1,5 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Paytone+One&display=swap');
+
+main {
+  margin: 0;
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+h1 {
+  font-size: 2.3rem;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 3.5rem;
+  padding-bottom: .6rem;
+}
+
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
+.inVibe {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.8rem;
+}
+
+.mainImage {
+  border-radius: .5rem;
+  height: 55vh;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.welcomeText {
+  width: 85%;
+  font-size: 1.9rem;
+}
+
+/* .mainImageHover {
+  box-shadow: 5px 5px 5px rgb(255, 255, 255);
+} */

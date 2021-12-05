@@ -1,0 +1,49 @@
+a {
+  color: rgba(234, 224, 213);
+}
+
+.navBar {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+.navBarLoggedIn {
+  display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    grid-template-areas:
+      "one two three four";
+      /* "three four"; */
+    max-width: 100%;
+    
+}
+
+.navBarLoggedOut {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "one two";
+    
+}
+
+.navItem {
+  font-size: 1.3rem;
+  list-style: none;
+  padding:  .4rem 0;
+}
+
+.gridSpace01 {
+  grid-area: one;
+}
+
+.gridSpace02 {
+  grid-area: two;
+}
+
+.gridSpace03 {
+  grid-area: three;
+}
+
+.gridSpace04 {
+  grid-area: four;
+}
