@@ -39,6 +39,7 @@ const BarDetails = (props) => {
       <p>Rating: {bar.rating}</p>
       <p>Price: {bar.price}</p>
       <a href={`${bar.url}`}>Yelp Link</a>
+    </>
       </div>
 
       <div>
@@ -56,10 +57,6 @@ const BarDetails = (props) => {
         <CocktailReview barID={bar.id} reviews={reviews} setReviews={setReviews} handleCreateCocktail={handleCreateCocktail} />
       </div>
       </>
-    
-    
-
-
     
   );
 }
