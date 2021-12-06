@@ -12,7 +12,7 @@ function getBarDetails(id) {  // cocktails-route(Merkis) branch; this function g
 
 function createCocktail(formData) {
   return fetch(`/cocktails`, {
-    method: "PUT",
+    method: "POST",
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`, 
       'Content-Type': 'application/json'},
@@ -21,13 +21,17 @@ function createCocktail(formData) {
   .then(res => res.json())
 }
 
-//function getAllCocktails()
+function getAllCocktails(id) {
+  return fetch(`/cocktails/${id}`)
+  .then(res => res.json())
+}
 
 
 export {
   getLocation,
   getBarDetails,
-  createCocktail
+  createCocktail,
+  getAllCocktails
 }
 
 // comment 

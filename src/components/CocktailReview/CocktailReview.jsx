@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { getAllCocktails } from "../../services/locationService"
 
 function CocktailReview(props) {
-    const navigate = useNavigate()
+    
     const [formData, setFormData] = useState({
         name: '',
         image: '',
@@ -10,6 +11,8 @@ function CocktailReview(props) {
         author: '',
         barID: props.barID
     })
+
+    const [cocktails, setCocktails] = useState([])
 
     const handleChange = e => {
         setFormData({
@@ -28,15 +31,18 @@ function CocktailReview(props) {
         }
     }
 
-    useEffect(()=> {
-		
-	}, [])
+    useEffect(() => {
+        getAllCocktails(props.barID)
+          .then(allCocktails => setCocktails(allCocktails))
+      },[])
 
     const { name, image, content, author } = formData
 
     const isFormInvalid = () => {
         return !(name && content)
       }
+
+    console.log("=====>",cocktails)
 
     return (
         <>
@@ -63,18 +69,21 @@ function CocktailReview(props) {
         <button disabled={isFormInvalid()}>Post</button>
      
       </form>
+      
+
 <div>
-    {props.reviews.forEach(review => 
+    {cocktails.map(cocktail=> 
     
     <div>
-      <p>{review.author}</p>
-      <p>{review.imageURL}</p>
-      <p>{review.content}</p>
+      <p>{cocktail.name}</p>
+      <p>{cocktail.imageURL}</p>
+      <p>{cocktail.content}</p>
     </div>
     
       )
 }   
 </div>
+
 </>
 
     )

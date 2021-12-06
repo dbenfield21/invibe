@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom'
 import CocktailReview from "../../components/CocktailReview/CocktailReview.jsx"
 import {createCocktail} from "../../services/locationService"
-// import { getLocation } from '../../services/locationService';
+import { getAllCocktails } from "../../services/locationService"
+import * as cocktailServices from "../../services/locationService"
 
 
 
@@ -18,14 +19,15 @@ const BarDetails = (props) => {
     .then(newCocktail => setReviews([...reviews,newCocktail]))
   }
 
-  /*function displayCocktails(){
+  function displayCocktails(){
     getAllCocktails()
     .then(allCocktails => setReviews([allCocktails]))
-  }*/
+  }
 
-  useEffect(() => {
-    setReviews([...reviews])
-  }, [])
+
+
+console.log("---------->>>", reviews)
+  
   
   return (
     <>
@@ -42,25 +44,11 @@ const BarDetails = (props) => {
         <p>Rating: {bar.rating}</p>
         <p>Price: {bar.price}</p>
         <a href={`${bar.url}`}>Yelp Link</a>
-      
-        </div>
-
-        <div>
-        {reviews.forEach(review => 
-        <>
-          <p>{review.author}</p>
-          <p>{review.imageURL}</p>
-          <p>{review.bio}</p>
-        </>
-        
-          )}
-        </div>
-
+      </div>
         <div>
           <CocktailReview barID={bar.id} reviews={reviews} setReviews={setReviews} handleCreateCocktail={handleCreateCocktail} />
         </div>
       </>
-    
   );
 }
 

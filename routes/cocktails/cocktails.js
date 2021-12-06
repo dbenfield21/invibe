@@ -5,7 +5,8 @@ import { decodeUserFromToken, checkAuth } from '../../middleware/auth.js'
 const router = Router()
 
 router.use(decodeUserFromToken)
-router.put('/', checkAuth , cocktailCtrl.create)
+router.get('/:id', cocktailCtrl.getAllCocktails)
+router.post('/', checkAuth , cocktailCtrl.create)
 
 
 export {

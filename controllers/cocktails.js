@@ -6,12 +6,29 @@ function create(req, res) {
     Cocktail.create(req.body)
     .then(newCocktail => {
         Bar.findOne({id: req.body.barID})
-        .then
-        res.json(newCocktail)
+        .then(bar => {
+            if(bar){
+            bar.id = req.body.barID
+            res.json(newCocktail)
+            } else {
+                Bar.create({id: req.body.barID})
+                res.json(newCocktail)
+            }
+        })
+        
     })
 
 }
 
+function getAllCocktails(req, res) {
+    console.log(req.params.id)
+    Cocktail.find({barID: req.params.id})
+    .then(cocktail => {
+        res.json(cocktail)
+    })
+}
+
 export {
-    create
+    create,
+    getAllCocktails
 }

@@ -4,6 +4,7 @@ const cocktailSchema = new mongoose.Schema({
     name: String,
     imageURL: String,
     content: String,  //changed from bio to content
+    barID: String,
     author: {type: mongoose.Schema.Types.ObjectId, ref: 'Profile'}
 })
 
