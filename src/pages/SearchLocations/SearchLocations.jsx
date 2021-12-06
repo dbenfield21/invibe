@@ -1,41 +1,23 @@
 import SearchForm from "../../components/SearchForm/SearchForm"
-import { getLocation } from "../../services/locationService"
+// import { getLocation } from "../../services/locationService"
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 import styles from "./SearchLocations.module.css"
 
 const SearchLocations = (props) => {
-  const [locationResults, setlocationResults] = useState([])
-  const [searchLocation, setSearchLocation] = useState([])
-  const handleSearch = (locationData) => {
-    getLocation(locationData.location)
-    .then(locationResults=> {
-      setSearchLocation(locationData.location)
-      setlocationResults(locationResults.businesses)
-    })
-  }
-
-  useEffect(() => {
-      localStorage.setItem("saved results", JSON.stringify(locationResults))
-  },[locationResults])
- 
-  const savedResults = localStorage.getItem("saved results")
-  const parsedResults = JSON.parse(savedResults)
-
-  console.log("RESULTS", parsedResults)
+  const { locationResults, searchLocation, handleSearch, resetSearch } = props
 
   return (
     <main>
-      {!parsedResults.length ? 
+      {!locationResults.length ? 
       <div className={styles.searchContainer}>
         <SearchForm handleSearch={handleSearch} />
-        
       </div>
         :
         <div className={styles.content}>
           <h1 className={styles.locationTitle}>{searchLocation}</h1>
           <div className={styles.resultsContainer}>
-            {parsedResults.map(bar => 
+            {locationResults.map(bar => 
               <div key={bar.id} className={styles.locationCard}>
                 <Link to="/barDetails" state={bar} className={styles.barImageContainer}><img className={styles.barImage} src={bar.image_url }alt={bar.name} /></Link>
                 <div className={styles.barInfoGrid}>

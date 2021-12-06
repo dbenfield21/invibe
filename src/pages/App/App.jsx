@@ -9,11 +9,15 @@ import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import Profile from '../Profile/Profile'
 import SearchLocations from '../SearchLocations/SearchLocations'
+import { getLocation } from "../../services/locationService"
 import * as authService from '../../services/authService'
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser())
 	const navigate = useNavigate()
+	const [locationResults, setlocationResults] = useState([])
+	const [searchLocation, setSearchLocation] = useState([])
+
 
 	const handleLogout = () => {
 		authService.logout()
@@ -25,6 +29,19 @@ const App = () => {
 		setUser(authService.getUser())
 	}
 
+	const handleSearch = (locationData) => {
+			getLocation(locationData.location)
+			.then(locationResults=> {
+				setSearchLocation(locationData.location)
+				setlocationResults(locationResults.businesses)
+			})
+		}
+
+		const resetSearch = () => {
+			setSearchLocation([])
+			setlocationResults([])
+		}
+
 // all functions to change a profile live in App
 
 	return (
@@ -35,7 +52,7 @@ const App = () => {
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
-				<Route path="/search" element={<SearchLocations />} />
+				<Route path="/search" element={<SearchLocations handleSearch={handleSearch} locationResults={locationResults} searchLocation={searchLocation} resetSearch={resetSearch} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' user={user} />} />
 				<Route path="/barDetails" element={<BarDetails />}></Route>
 				<Route path="/profile" element={<Profile user={user} />}></Route>
