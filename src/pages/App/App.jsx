@@ -37,7 +37,6 @@ const App = () => {
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
 				<Route path="/search" element={<SearchLocations />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' user={user} />} />
-				<Route path="/search" element={<SearchLocations /> } />
 				<Route path="/barDetails" element={<BarDetails />}></Route>
 				<Route path="/profile" element={<Profile user={user} />}></Route>
 			</Routes>

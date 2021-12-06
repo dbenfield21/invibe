@@ -1,6 +1,6 @@
 import SearchForm from "../../components/SearchForm/SearchForm"
 import { getLocation } from "../../services/locationService"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 import styles from "./SearchLocations.module.css"
 
@@ -13,11 +13,20 @@ const SearchLocations = (props) => {
       setSearchLocation(locationData.location)
       setlocationResults(locationResults.businesses)
     })
-  
   }
+
+  useEffect(() => {
+      localStorage.setItem("saved results", JSON.stringify(locationResults))
+  },[locationResults])
+ 
+  const savedResults = localStorage.getItem("saved results")
+  const parsedResults = JSON.parse(savedResults)
+
+  console.log("RESULTS", parsedResults)
+
   return (
     <main>
-      {!locationResults.length ? 
+      {!parsedResults.length ? 
       <div className={styles.searchContainer}>
         <SearchForm handleSearch={handleSearch} />
         
@@ -26,7 +35,7 @@ const SearchLocations = (props) => {
         <div className={styles.content}>
           <h1 className={styles.locationTitle}>{searchLocation}</h1>
           <div className={styles.resultsContainer}>
-            {locationResults.map(bar => 
+            {parsedResults.map(bar => 
               <div key={bar.id} className={styles.locationCard}>
                 <Link to="/barDetails" state={bar} className={styles.barImageContainer}><img className={styles.barImage} src={bar.image_url }alt={bar.name} /></Link>
                 <div className={styles.barInfoGrid}>
@@ -43,10 +52,7 @@ const SearchLocations = (props) => {
               )}
           </div>
         </div>
-       
-}
-      
-      
+      } 
     </main>
   )
 }

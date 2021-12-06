@@ -29,33 +29,36 @@ const BarDetails = (props) => {
   
   return (
     <>
-    <div>
-      <img src={bar.image_url }alt={bar.name} />
-      <h2>{bar.name}</h2>
-      <p>{bar.location.display_address}</p>
-      {/* FIX MISSING SPACE IN ADDRESS */}
-      <p>{bar.display_phone}</p>
-      {bar.is_closed ? <p>We're currently closed</p> : <p>We're currently open</p>}
-      <p>Rating: {bar.rating}</p>
-      <p>Price: {bar.price}</p>
-      <a href={`${bar.url}`}>Yelp Link</a>
-    </>
-      </div>
-
       <div>
-      {reviews.forEach(review => 
-      <>
-        <p>{review.author}</p>
-        <p>{review.imageURL}</p>
-        <p>{review.bio}</p>
-      </>
+      <Link  to="/search">
+        <button>Back to Results</button>
+      </Link>
+        <img src={bar.image_url }alt={bar.name} />
+        <h2>{bar.name}</h2>
+        <p>{bar.location.display_address}</p>
+        {/* FIX MISSING SPACE IN ADDRESS */}
+        <p>{bar.display_phone}</p>
+        {bar.is_closed ? <p>We're currently closed</p> : <p>We're currently open</p>}
+        <p>Rating: {bar.rating}</p>
+        <p>Price: {bar.price}</p>
+        <a href={`${bar.url}`}>Yelp Link</a>
       
-        )}
-      </div>
+        </div>
 
-      <div>
-        <CocktailReview barID={bar.id} reviews={reviews} setReviews={setReviews} handleCreateCocktail={handleCreateCocktail} />
-      </div>
+        <div>
+        {reviews.forEach(review => 
+        <>
+          <p>{review.author}</p>
+          <p>{review.imageURL}</p>
+          <p>{review.bio}</p>
+        </>
+        
+          )}
+        </div>
+
+        <div>
+          <CocktailReview barID={bar.id} reviews={reviews} setReviews={setReviews} handleCreateCocktail={handleCreateCocktail} />
+        </div>
       </>
     
   );
