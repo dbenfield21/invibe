@@ -16,6 +16,7 @@ const SearchLocations = (props) => {
         :
         <div className={styles.content}>
           <h1 className={styles.locationTitle}>{searchLocation}</h1>
+          <button onClick={resetSearch}>New Search</button>
           <div className={styles.resultsContainer}>
             {locationResults.map(bar => 
               <div key={bar.id} className={styles.locationCard}>

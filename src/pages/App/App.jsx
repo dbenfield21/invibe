@@ -40,13 +40,14 @@ const App = () => {
 		const resetSearch = () => {
 			setSearchLocation([])
 			setlocationResults([])
+			navigate('/search')
 		}
 
 // all functions to change a profile live in App
 
 	return (
 		<>
-			<NavBar user={user} handleLogout={handleLogout} />
+			<NavBar user={user} handleLogout={handleLogout} resetSearch={resetSearch}/>
 			<Routes>
 				<Route path='/' element={<Landing user={user} />} />
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
