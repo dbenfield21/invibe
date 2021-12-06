@@ -4,7 +4,6 @@ import CocktailReview from "../../components/CocktailReview/CocktailReview.jsx"
 import {createCocktail} from "../../services/locationService"
 import { getAllCocktails } from "../../services/locationService"
 import * as cocktailServices from "../../services/locationService"
-// import { getLocation } from '../../services/locationService';
 
 
 
@@ -32,33 +31,23 @@ console.log("---------->>>", reviews)
   
   return (
     <>
-    <div>
-      <img src={bar.image_url }alt={bar.name} />
-      <h2>{bar.name}</h2>
-      <p>{bar.location.display_address}</p>
-      {/* FIX MISSING SPACE IN ADDRESS */}
-      <p>{bar.display_phone}</p>
-      {bar.is_closed ? <p>We're currently closed</p> : <p>We're currently open</p>}
-      <p>Rating: {bar.rating}</p>
-      <p>Price: {bar.price}</p>
-      <a href={`${bar.url}`}>Yelp Link</a>
-      </div>
-    
       <div>
-      {reviews.forEach(review => 
-      <>
-        <p>{review.title}</p>
-        <p>{review.content}</p>
-        <p>{review.imageURL}</p>
-        
-      </>
-      
-        )}
+      <Link  to="/search">
+        <button>Back to Results</button>
+      </Link>
+        <img src={bar.image_url }alt={bar.name} />
+        <h2>{bar.name}</h2>
+        <p>{bar.location.display_address}</p>
+        {/* FIX MISSING SPACE IN ADDRESS */}
+        <p>{bar.display_phone}</p>
+        {bar.is_closed ? <p>We're currently closed</p> : <p>We're currently open</p>}
+        <p>Rating: {bar.rating}</p>
+        <p>Price: {bar.price}</p>
+        <a href={`${bar.url}`}>Yelp Link</a>
       </div>
-
-      <div>
-        <CocktailReview barID={bar.id} reviews={reviews} setReviews={setReviews} handleCreateCocktail={handleCreateCocktail} />
-      </div>
+        <div>
+          <CocktailReview barID={bar.id} reviews={reviews} setReviews={setReviews} handleCreateCocktail={handleCreateCocktail} />
+        </div>
       </>
   );
 }
