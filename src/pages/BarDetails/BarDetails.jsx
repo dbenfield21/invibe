@@ -4,6 +4,7 @@ import CocktailForm from "../../components/CocktailForm/CocktailForm.jsx"
 import {createCocktail} from "../../services/locationService"
 import { getAllCocktails } from "../../services/locationService"
 import * as cocktailServices from "../../services/locationService"
+import styles from "./BarDetails.module.css"
 
 
 
@@ -55,7 +56,7 @@ console.log("---------->>>",cocktails)
           <p>Author: {cocktail.author.name}</p>
           <p>Cocktail Name: {cocktail.name}</p>
           <p>{cocktail.content}</p>
-          <p>{cocktail.imageURL}</p
+          <p>{cocktail.imageURL}</p>
         </div>
 
     )
