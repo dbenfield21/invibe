@@ -24,6 +24,7 @@ const SearchForm = (props) => {
     // })
     try {
       props.handleSearch(formData)
+      props.saveSearch()
       
     } catch (err) {
       console.log(err)

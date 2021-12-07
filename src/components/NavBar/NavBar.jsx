@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, resetSearch }) => {
+
+	
+
 	return (
 		<div >
 			{user ? (
@@ -18,7 +21,7 @@ const NavBar = ({ user, handleLogout }) => {
 							<Link to="/users">See Users</Link>
 						</li>
 						<li className={`${styles.navItem} ${styles.gridSpace04}`}>
-							<Link to="/search">Bar Finder</Link>
+							<Link to="/search" onClick={resetSearch}>Bar Finder</Link>
 						</li>
 					</ul>
 				</nav>
