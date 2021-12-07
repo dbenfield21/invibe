@@ -12,7 +12,7 @@ const NavBar = ({ user, handleLogout, resetSearch }) => {
 				<nav>
 					<ul className={`${styles.navBar} ${styles.navBarLoggedIn}`}>
 						<li className={`${styles.navItem} ${styles.gridSpace01}`}>
-						<Link to='/profile'state={user}>Welcome {user.name}</Link>
+						<Link to='/profile' state={user}>Welcome {user.name}</Link>
 						</li>
 						<li className={`${styles.navItem} ${styles.gridSpace02}`}>
 							<Link to='' onClick={handleLogout}>LOG OUT</Link>

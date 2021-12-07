@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAllCocktails } from "../../services/locationService"
 
-function CocktailReview(props) {
+function CocktailForm(props) {
     
     const [formData, setFormData] = useState({
         name: '',
@@ -11,8 +11,11 @@ function CocktailReview(props) {
         author: '',
         barID: props.barID
     })
+    console.log("TESTING PROPS REVIEWS",props)
+    
 
-    const [cocktails, setCocktails] = useState([])
+    
+    
 
     const handleChange = e => {
         setFormData({
@@ -25,16 +28,14 @@ function CocktailReview(props) {
         e.preventDefault()
         try {
             props.handleCreateCocktail(formData)
+            setFormData({content:'', name:'',author:'',barID: props.ID,image:''})
             
         } catch (err) {
             console.log(err)
         }
     }
 
-    useEffect(() => {
-        getAllCocktails(props.barID)
-          .then(allCocktails => setCocktails(allCocktails))
-      },[])
+    
 
     const { name, image, content, author } = formData
 
@@ -42,7 +43,7 @@ function CocktailReview(props) {
         return !(name && content)
       }
 
-    console.log("=====>",cocktails)
+    console.log("=====>",props)
 
     return (
         <>
@@ -71,18 +72,7 @@ function CocktailReview(props) {
       </form>
       
 
-<div>
-    {cocktails.map(cocktail=> 
-    
-    <div>
-      <p>{cocktail.name}</p>
-      <p>{cocktail.imageURL}</p>
-      <p>{cocktail.content}</p>
-    </div>
-    
-      )
-}   
-</div>
+
 
 </>
 
@@ -91,4 +81,4 @@ function CocktailReview(props) {
 
 }
 
-export default CocktailReview
+export default CocktailForm

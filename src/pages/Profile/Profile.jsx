@@ -6,9 +6,21 @@ import { useLocation } from 'react-router';
 
 
 
-const Profile = () => {
+const Profile = (props) => {
   const location = useLocation()
   const user = location.state 
+
+  //the addFollowers controller in our back end will return a profile object containing the
+  // user added in the 'followers' field of the model
+
+  // there must be a way to set props.user equal to this returned profile
+
+  // 
+
+  //Let's say...... props.user === returnedProfile works. 
+
+  console.log(props.user)
+
   return (
     <>
       <h1>Name: {user.name}</h1>
