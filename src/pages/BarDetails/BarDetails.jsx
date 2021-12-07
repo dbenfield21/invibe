@@ -1,33 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom'
-import CocktailReview from "../../components/CocktailReview/CocktailReview.jsx"
+import CocktailForm from "../../components/CocktailForm/CocktailForm.jsx"
 import {createCocktail} from "../../services/locationService"
 import { getAllCocktails } from "../../services/locationService"
 import * as cocktailServices from "../../services/locationService"
-// import { getLocation } from '../../services/locationService';
 
 
 
 const BarDetails = (props) => {
   const location = useLocation() 
-  const [reviews, setReviews] = useState([])
+ 
   const bar = location.state
 
-
+  const [cocktails, setCocktails] = useState([])
 
   function handleCreateCocktail(formData) {
     createCocktail(formData)
-    .then(newCocktail => setReviews([...reviews,newCocktail]))
-  }
-
-  function displayCocktails(){
-    getAllCocktails()
-    .then(allCocktails => setReviews([allCocktails]))
+    .then(newCocktail => setCocktails([...cocktails,newCocktail]))
   }
 
 
+  useEffect(() => {
+    getAllCocktails(bar.id)
+      .then(allCocktails => setCocktails(allCocktails))
+  },[])
 
-console.log("---------->>>", reviews)
+
+ 
+
+
+
+console.log("---------->>>",cocktails)
   
   
   return (
@@ -45,19 +48,22 @@ console.log("---------->>>", reviews)
       </div>
     
       <div>
-      {reviews.forEach(review => 
-      <>
-        <p>{review.title}</p>
-        <p>{review.content}</p>
-        <p>{review.imageURL}</p>
-        
-      </>
+    {cocktails.map(cocktail=> 
+    
+    <div>
+        <p>Author: {cocktail.author.name}</p>
+      <p>Cocktail Name: {cocktail.name}</p>
+      <p>{cocktail.content}</p>
+      <p>{cocktail.imageURL}</p>
       
-        )}
-      </div>
+    </div>
+    
+      )
+}   
+</div>
 
       <div>
-        <CocktailReview barID={bar.id} reviews={reviews} setReviews={setReviews} handleCreateCocktail={handleCreateCocktail} />
+        <CocktailForm  handleCreateCocktail={handleCreateCocktail} />
       </div>
       </>
   );
