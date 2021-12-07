@@ -1,30 +1,22 @@
 import SearchForm from "../../components/SearchForm/SearchForm"
-import { getLocation } from "../../services/locationService"
-import React, { useState } from 'react';
+// import { getLocation } from "../../services/locationService"
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 import styles from "./SearchLocations.module.css"
 
 const SearchLocations = (props) => {
-  const [locationResults, setlocationResults] = useState([])
-  const [searchLocation, setSearchLocation] = useState([])
-  const handleSearch = (locationData) => {
-    getLocation(locationData.location)
-    .then(locationResults=> {
-      setSearchLocation(locationData.location)
-      setlocationResults(locationResults.businesses)
-    })
-  
-  }
+  const { locationResults, searchLocation, handleSearch, resetSearch } = props
+
   return (
     <main>
       {!locationResults.length ? 
       <div className={styles.searchContainer}>
         <SearchForm handleSearch={handleSearch} />
-        
       </div>
         :
         <div className={styles.content}>
           <h1 className={styles.locationTitle}>{searchLocation}</h1>
+          <button onClick={resetSearch}>New Search</button>
           <div className={styles.resultsContainer}>
             {locationResults.map(bar => 
               <div key={bar.id} className={styles.locationCard}>
@@ -43,10 +35,7 @@ const SearchLocations = (props) => {
               )}
           </div>
         </div>
-       
-}
-      
-      
+      } 
     </main>
   )
 }
