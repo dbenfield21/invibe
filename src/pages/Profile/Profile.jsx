@@ -12,37 +12,29 @@ const Profile = (props) => {
 
   const [profile, setProfile] = useState({})
   
+  
     useEffect(() => {
       console.log("USER", user.profile)
       getProfile(user.profile._id)
       .then(profile => setProfile(profile))
-      console.log("USER", user.profile)
-      console.log("PROFILE", profile)
-    }, [])
+    },[])
     
   return (
     <div>
       <h1>Name: {profile.name}</h1>
       <h1>Email: {profile.email}</h1>
-      <h2>Followers: {}</h2>
-
+      
       {(props.user.name !== user.name) &&  <button onClick={()=> getFollowers(user._id)} > Follow </button>}
-
-  
-      {/* {profile.followers.map(follower => 
+    
+      <h2>Following:</h2>
+      {profile.followers && profile.followers.map((follower) =>
         <div key={follower._id}>
           <p>{follower.name}</p>
         </div>
-        )} */}
-
-      {/* {profile.followers.map(follower => {
-      <div key={follower._id}>
-        <h1>{follower.name}</h1>
-        })} */}
-      {/* </div> */}
+        )}
     </div>
     
-  );
+  ); 
 }
 
 export default Profile;
