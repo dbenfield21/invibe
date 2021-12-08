@@ -7,15 +7,15 @@ function create(req, res) {
     Cocktail.create(req.body)
     .then(newCocktail => {
         newCocktail.populate('author')
-        .then(NnewCocktail => {
+        .then(newCocktail => {
         Bar.findOne({id: req.body.barID})
         .then(bar => {
             if(bar){
             bar.id = req.body.barID
-            res.json(NnewCocktail)
+            res.json(newCocktail)
             } else {
                 Bar.create({id: req.body.barID})
-                res.json(NnewCocktail)
+                res.json(newCocktail)
             }
         })
         })

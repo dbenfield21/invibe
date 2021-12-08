@@ -1,41 +1,82 @@
 import { Profile } from '../models/profile.js'
+import {Location} from "../models/location.js"
 
 function index(req, res) {
-  Profile.find({})
+  Profile.findById(req.params.id)
   .populate([
-    {
-      path: 'favLocations'
+    { 
+      path: 'favLocations', model: Location
     },
     {
       path: 'favBars',
     }, 
     {
-      path: 'friends',
-    },
+      path: 'followers',
+    }, 
   ])
   .then(profiles => {
     res.json(profiles)
     })
   }
 
-
   function show(req, res) {
+    console.log("REQ---------------------->", req.params.id)
     Profile.findById(req.params.id)
-    // .populate("friends")
+    .populate("followers")
     .then(profiles => {
       res.json(profiles)
     })
     .catch(err => {
       console.log(err)
-      res.redirect("/")
+      res.json(err)
     })
   }
 
 
+  // function addFollower(req, res) {
+  //   Profile.findById(req.user.profile)
+  //   .then(profile => {
+  //     profile.followers.push(req.params.id)
+  //     profile.save()
+  //     .then((profile) => {
+  //       console.log(profile)
+  //       res.json(profile)
+  //     })
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //     res.json(err)
+  //   })
+  // }
 
 
+  function addFollower(req, res) {
+    Profile.findById(req.user.profile)
+    .then(profile => {
+      profile.followers.push(req.params.id)
+      profile.save()
+      .then(() => {
+        console.log(profile)
+        res.json(profile)
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.json(err)
+    })
+  }
+
+
+function deleteFollower(req, res) {
+  Profile.findByIdAndDelete(req.params.id)
+  .then(profile => {
+    res.json(profile)
+  })
+}
 
 export {
   index,
   show,
+  addFollower,
+  deleteFollower as delete,
 }

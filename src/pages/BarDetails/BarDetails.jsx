@@ -26,11 +26,6 @@ const BarDetails = (props) => {
       .then(allCocktails => setCocktails(allCocktails))
   },[])
 
-
- 
-
-
-
 console.log("---------->>>",cocktails)
   
   

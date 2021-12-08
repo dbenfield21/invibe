@@ -9,6 +9,7 @@ const Users = (props) => {
     userService.getAllUsers()
     .then(users => setUsers(users))
   }, [])
+  
 
   return (
     <>
