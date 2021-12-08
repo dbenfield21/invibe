@@ -8,8 +8,11 @@ const router = Router()
 
 
 /*---------- Protected Routes ----------*/
+router.use(decodeUserFromToken)
 router.get("/", checkAuth, profilesCtrl.index)
 router.get("/:id", checkAuth, profilesCtrl.show)
+router.patch("/:id", checkAuth, profilesCtrl.addFollower)
+router.delete("/:id", checkAuth, profilesCtrl.delete)
 // router.get("/:id", checkAuth, profilesCtrl.edit)
 
 export { router }
