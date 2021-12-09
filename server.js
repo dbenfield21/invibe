@@ -26,7 +26,7 @@ app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/resources', apiRouter)
 app.use('/cocktails', cocktailsRouter)
-app.use('/profile', profilesRouter)
+app.use('/api/profile', profilesRouter)
 
 
 app.get('/*', function (req, res) {

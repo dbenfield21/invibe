@@ -1,69 +1,149 @@
-# MERN Stack with OAuth Template
+# **InVibe** 
+## Check out _[InVibe](deployment)_ here!
 
-This is a MERN Stack template that includes JWT Authentication.
 
-Use this to go build things! 🚀
 
-## To Use This Template
+---
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+<p>&nbsp;</p>
 
-```bash
-git clone https://github.com/SEI-Remote-WC/mern-jwt-auth-template-hooks <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+## Creators:
 
-Once you are in the project directory:
+- Jeff Gore  [LinkedIn](https://www.linkedin.com/in/jeffgore77/) 
+  
+- Darby Benfield [LinkedIn](https://www.linkedin.com/in/darby-benfield/)  
+  
+- Merkis Ruiz [LinkedIn](https://www.linkedin.com/in/merkis-ruiz/)  
+  
+<p>&nbsp;</p>
 
-```bash
-rm -rf .git
-```
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+## About InVIbe:
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+Ever find yourself in a new city wanting to sip on a decent cocktail only to be met with choice overload? 
 
-Re-initialize a git repository:
+InVibe serves as the perfect hub for finding the highest rated bars in your city using Yelps comprehensive API! 
 
-```bash
-git init
-```
 
-Use the GitHub CLI to create a new project repository on GitHub:
+<p>&nbsp;</p>
 
-```bash
-gh repo create <name-of-your-app-here>
-```
+## Objective:
 
-Run npm i to fetch the template's dependencies:
+To build a full CRUD, full MERN stack application that is fun and easy to use!
 
-```bash
-npm i
-```
+<p>&nbsp;</p>
 
-Then, make an initial commit:
+## Getting Started:
 
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
+[Trello](https://trello.com/b/2US7FRw2/the-tipsy-triumvirate) was an invaluable resource for group planning and organization. 
 
-touch a .env file:
 
-```bash
-touch .env
-```
 
-Fill it with the following:
+<p>&nbsp;</p>
 
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
+## Motivation:
 
-Replace the `DATABASE_URL` and `SECRET` with values that you provide.
+Our team is built of travels and people that love to enjoy a stunning location with a delicious drink in hand. We wanted to make this more accessible to fellow cocktail connoisseurs. 
 
-Delete this README.md
+<p>&nbsp;</p>
 
-You're done!
+## Wireframe & ERD:
+
+
+![wireframe](LogoImages/wireframe.png)
+
+![ERD](LogoImages/ERD.png)
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## InVibe's Site:
+
+![Site]( )
+
+![Landing Page]( )
+
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+## Minimum Viable Product:
+
+1. A site that can be logged into using JWT-token-based authentication. 
+   
+2. Access to content and features once the user is logged in
+   
+3. The ability to search the Yelp API for travel locations
+   
+4. The ability to add, update, and delete cocktails on specific locations.
+    
+   
+5. The ability to view other profiles and to follow or unfollow these profiles. 
+   
+
+   
+
+<p>&nbsp;</p>
+
+
+
+<p>&nbsp;</p>
+
+## Future Goals:
+
+  1. Unfollow profiles that have been followed. 
+  2. Improved alternate text/accesibility.
+  3. Save specific locations to profile. 
+  4. Save specific bars to profile. 
+  5. Cocktails that have been added will show as a list on the profile as well as the location that they were added to. 
+
+<p>&nbsp;</p>
+
+## Hindsight Perspective:
+
+Moving forward, it would benefit our team to ... 
+
+
+
+<p>&nbsp;</p>
+
+## Credits/ Invaluable Resources:
+1. Ben Manley- we are grateful for the support and guidance with InVibe. 
+2. [Unsplash](https://www.unsplash.com/) for beautiful images
+3. 
+
+<p>&nbsp;</p>
+
+## Technology Used:
+
+- Axios
+- React JSX
+
+[![JavaScript CSS React](LogoImages/css:js:html.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+[![React](https://raw.githubusercontent.com/jalbertsr/logo-badge-images/master/img/react_logo.png)](https://facebook.github.io/react/)
+
+[![Heroku](https://github.com/jalbertsr/logo-badge-images/blob/master/img/rsz_heroku.png?raw=true)](https://www.heroku.com/)
+
+
+[![npm](LogoImages/npm-logo_1.png)](https://www.npmjs.com/)
+
+
+[![Monogoose](LogoImages/mongoose.png)](http://mongoosejs.com/)
+
+[![mongoDB](LogoImages/MongoDB-logo.gif)](https://www.mongodb.com/)
+
+[![YelpApi](LogoImages/yelp.png)](https://fusion.yelp.com/)
+
+
+[![JWT](LogoImages/jwt.png)](https://jwt.io/introduction)
+
+[![NodeJS](LogoImages/nodejs.png)](https://nodejs.org/en/)
+
+
+[![GitHub](LogoImages/github.png)](https://github.com/)
+
+
+

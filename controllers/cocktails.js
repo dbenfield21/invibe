@@ -9,9 +9,7 @@ function create(req, res) {
             newCocktail.populate('author')
             .then(() => {
                 res.json(newCocktail)
-            })
-        })
-
+            })     
 }
 
 function getAllCocktails(req, res) {

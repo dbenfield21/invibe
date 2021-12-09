@@ -10,8 +10,6 @@ import * as authService from '../../services/authService'
 
 
 
-
-
 const BarDetails = (props) => {
   const location = useLocation() 
  
@@ -23,8 +21,7 @@ const BarDetails = (props) => {
 
   function handleCreateCocktail(formData) {
     createCocktail(formData)
-    .then(newCocktail => setCocktails([...cocktails,newCocktail]))
-    
+    .then(newCocktail => setCocktails([...cocktails,newCocktail])) 
   }
 
   const handleDeleteCocktail = id => {
@@ -40,46 +37,36 @@ const BarDetails = (props) => {
       const newCocktailArray = cocktails.map(cocktail=> cocktail._id === editedCocktail._id ? editedCocktail: cocktail)
 			setCocktails(newCocktailArray)
       setComponent([])
-			//navigate('/blogs')
     })
   }
+
 
   
   const addComponent = (id) => {
     setComponent((<EditCocktail cocktailID={id} resetComponent={setComponent} barID={bar.id} handleEditCocktail={handleEditCocktail}/>))
   }
 
+
   useEffect(() => {
     getAllCocktails(bar.id)
     .then(allCocktails => setCocktails(allCocktails))
   },[])
 
-
-
-  
-
-console.log("Yoohooo",cocktails)
-
-
-console.log("---------->>>",cocktails)
-console.log("USER and COCKTAILS", user.profile)
-  
-  
   return (
     <>
       <div className={styles.locationContainer}>
         <Link  to="/search">
           <button>Back to Results</button>
         </Link>
-          <img src={bar.image_url }alt={bar.name} />
-          <h2>{bar.name}</h2>
-          <p>{bar.location.display_address}</p>
+          <img className={styles.barImage} src={bar.image_url }alt={bar.name} />
+          <h2 className={styles.barName}>{bar.name}</h2>
+          <p className={styles.barLocation}>{bar.location.display_address}</p>
           {/* FIX MISSING SPACE IN ADDRESS */}
-          <p>{bar.display_phone}</p>
-          {bar.is_closed ? <p>We're currently closed</p> : <p>We're currently open</p>}
-          <p>Rating: {bar.rating}</p>
-          <p>Price: {bar.price}</p>
-          <a href={`${bar.url}`}>Yelp Link</a>
+          <p className={styles.barPhone} >{bar.display_phone}</p>
+          {bar.is_closed ? <p className={styles.barOPen} >We're currently closed</p> : <p className={styles.barOPen} >We're currently open</p>}
+          <p className={styles.barRating} >Rating: {bar.rating}</p>
+          <p className={styles.barPrice} >Price: {bar.price}</p>
+          <a className={styles.barLink} href={`${bar.url}`}>Yelp Link</a>
         </div>
     
         {cocktails && cocktails.map(cocktail=> 
@@ -88,20 +75,18 @@ console.log("USER and COCKTAILS", user.profile)
           <p>Cocktail Name: {cocktail.name}</p>
           <p>{cocktail.content}</p>
           <p>{cocktail.imageURL}</p>
-          {console.log("HIT Me",cocktail.author._id)}
           <>
-          { (user.profile === cocktail.author._id)  && <button onClick={()=>handleDeleteCocktail(cocktail._id)}>DELETE</button> } 
-           { (user.profile === cocktail.author._id)  && <button onClick={()=>addComponent(cocktail._id)}>EDIT</button>}
-           
-           </>
+            { (user.profile === cocktail.author._id)  && <button onClick={()=>handleDeleteCocktail(cocktail._id)}>DELETE</button> } 
+            { (user.profile === cocktail.author._id)  && <button onClick={()=>addComponent(cocktail._id)}>EDIT</button>}
+          </>
         </div>  
     )
   }  
-    <CocktailForm handleCreateCocktail={handleCreateCocktail} barID={bar.id} /> 
-    <div>
-             {component}
-           </div>
-      </>
+      <CocktailForm handleCreateCocktail={handleCreateCocktail} barID={bar.id} /> 
+      <div>
+        {component}
+      </div>
+    </>
   );
 }
 

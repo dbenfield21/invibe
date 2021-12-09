@@ -1,36 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import * as userService from '../../services/userService'
+import * as profileService from '../../services/profileService'
 import Users from '../Users/Users';
-import { useLocation } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 
-
+import { getFollowers, deleteFollowers, getProfile } from '../../services/profileService';
 
 
 const Profile = (props) => {
   const location = useLocation()
-  const user = location.state 
+  const params = useParams()
 
-  //the addFollowers controller in our back end will return a profile object containing the
-  // user added in the 'followers' field of the model
-
-  // there must be a way to set props.user equal to this returned profile
-
-  // 
-
-  //Let's say...... props.user === returnedProfile works. 
-
-  console.log(props.user)
-
+  const [profile, setProfile] = useState({})
+  
+  
+    useEffect(() => {
+      console.log("profile", params)
+      getProfile(params.id)
+      .then(profile => setProfile(profile))
+    },[params])
+    
   return (
-    <>
-      <h1>Name: {user.name}</h1>
-      <h1>Email: {user.email}</h1>
-      <h2>{user.defaultImage}</h2>
-    </>
-  );
+    <div>
+      <h1>Name: {profile.name}</h1>
+      <h1>Email: {profile.email}</h1>
+      
+      {(props.user.name !== profile.name) &&  <button onClick={()=> getFollowers(profile._id)} > Follow </button>}
+    
+      <h2>Following:</h2>
+      {profile.followers && profile.followers.map((follower) =>
+        <div key={follower._id}>
+          <p>{follower.name}</p>
+        </div>
+        )}
+    </div>
+    
+  ); 
 }
-
-
-
 
 export default Profile;
