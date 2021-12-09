@@ -17,7 +17,7 @@ import { router as apiRouter } from './routes/api/api.js'
 import { router as cocktailsRouter } from './routes/cocktails/cocktails.js'
 import { router as profilesRouter } from "./routes/profiles.js"
 
-
+app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'build')))
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
