@@ -1,26 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom'
 import CocktailForm from "../../components/CocktailForm/CocktailForm.jsx"
-import {createCocktail} from "../../services/locationService"
+import EditCocktail from "../../components/EditCocktail/EditCocktail.jsx"
+import {createCocktail, deleteCocktail} from "../../services/locationService"
 import { getAllCocktails } from "../../services/locationService"
-import * as cocktailServices from "../../services/locationService"
+import * as cocktailServices from "../../services/cocktailService"
 import styles from "./BarDetails.module.css"
+import * as authService from '../../services/authService'
+
+
 
 const BarDetails = (props) => {
   const location = useLocation() 
  
   const bar = location.state
+  const user = authService.getUser()
 
   const [cocktails, setCocktails] = useState([])
+  const [component, setComponent] = useState([])
 
   function handleCreateCocktail(formData) {
     createCocktail(formData)
-    .then(newCocktail => setCocktails([...cocktails,newCocktail]))
+    .then(newCocktail => setCocktails([...cocktails,newCocktail])) 
   }
+
+  const handleDeleteCocktail = id => {
+		deleteCocktail(id)
+		.then(deletedCocktail => {
+			setCocktails(cocktails.filter(cocktail => cocktail._id !== deletedCocktail._id))
+		})
+	}
+
+  const handleEditCocktail = (formData) => {
+    cocktailServices.editCocktail(formData)
+    .then(editedCocktail => {
+      const newCocktailArray = cocktails.map(cocktail=> cocktail._id === editedCocktail._id ? editedCocktail: cocktail)
+			setCocktails(newCocktailArray)
+      setComponent([])
+    })
+  }
+
+
+  
+  const addComponent = (id) => {
+    setComponent((<EditCocktail cocktailID={id} resetComponent={setComponent} barID={bar.id} handleEditCocktail={handleEditCocktail}/>))
+  }
+
 
   useEffect(() => {
     getAllCocktails(bar.id)
-      .then(allCocktails => setCocktails(allCocktails))
+    .then(allCocktails => setCocktails(allCocktails))
   },[])
 
   return (
@@ -39,22 +68,25 @@ const BarDetails = (props) => {
           <p className={styles.barPrice} >Price: {bar.price}</p>
           <a className={styles.barLink} href={`${bar.url}`}>Yelp Link</a>
         </div>
-
-        {cocktails.map(cocktail=> 
+    
+        {cocktails && cocktails.map(cocktail=> 
         <div>
           <p>Author: {cocktail.author.name}</p>
           <p>Cocktail Name: {cocktail.name}</p>
           <p>{cocktail.content}</p>
           <p>{cocktail.imageURL}</p>
-        </div>
+          <>
+            { (user.profile === cocktail.author._id)  && <button onClick={()=>handleDeleteCocktail(cocktail._id)}>DELETE</button> } 
+            { (user.profile === cocktail.author._id)  && <button onClick={()=>addComponent(cocktail._id)}>EDIT</button>}
+          </>
+        </div>  
     )
-  }   
-      
-
-        <div>
-          <CocktailForm  handleCreateCocktail={handleCreateCocktail} />
-        </div>
-      </>
+  }  
+      <CocktailForm handleCreateCocktail={handleCreateCocktail} barID={bar.id} /> 
+      <div>
+        {component}
+      </div>
+    </>
   );
 }
 

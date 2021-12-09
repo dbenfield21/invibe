@@ -6,6 +6,7 @@ import styles from "./SearchLocations.module.css"
 
 const SearchLocations = (props) => {
   const { locationResults, searchLocation, handleSearch, resetSearch } = props
+  const profileid = props.user.profile
 
   return (
     <main>
@@ -45,5 +46,3 @@ const SearchLocations = (props) => {
 }
 
 export default SearchLocations
-
-// results state here and import function to make API call. 
