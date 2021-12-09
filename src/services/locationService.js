@@ -26,12 +26,23 @@ function getAllCocktails(id) {
   .then(res => res.json())
 }
 
+function deleteCocktail(id) {
+  return fetch(`/cocktails/${id}`,{
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`, 
+      'Content-Type': 'application/json'}
+  })
+  .then(res => res.json())
+}
+
 
 export {
   getLocation,
   getBarDetails,
   createCocktail,
-  getAllCocktails
+  getAllCocktails,
+  deleteCocktail
 }
 
 // comment 

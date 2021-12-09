@@ -53,7 +53,7 @@ const App = () => {
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
-				<Route path="/search" element={<SearchLocations handleSearch={handleSearch} locationResults={locationResults} searchLocation={searchLocation} resetSearch={resetSearch} />} />
+				<Route path="/search" element={<SearchLocations handleSearch={handleSearch} locationResults={locationResults} searchLocation={searchLocation} resetSearch={resetSearch} user={user} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' user={user} />} />
 				<Route path="/barDetails" element={<BarDetails />}></Route>
 				<Route path="/profile" element={<Profile user={user} />}></Route>

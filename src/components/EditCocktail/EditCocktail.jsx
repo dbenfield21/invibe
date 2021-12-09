@@ -1,16 +1,16 @@
-import  { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { getAllCocktails } from "../../services/locationService"
+import { useState} from 'react'
 
 
-function CocktailForm(props) {
+
+function EditCocktail(props) {
     
     const [formData, setFormData] = useState({
         name: '',
         image: '',
         content: '',
         author: '',
-        barID: props.barID
+        barID: props.barID,
+        id: props.cocktailID
     })
     console.log("TESTING PROPS REVIEWS",props)
     
@@ -25,16 +25,17 @@ function CocktailForm(props) {
         })
       }
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault()
         try {
-            props.handleCreateCocktail(formData)
+            props.handleEditCocktail(formData)
             setFormData({content:'', name:'',author:'',barID: '',image:''})
             
         } catch (err) {
             console.log(err)
         }
     }
+
 
     
 
@@ -52,7 +53,7 @@ function CocktailForm(props) {
         autoComplete="off"
         onSubmit={handleSubmit}
       > 
-        <p>Cocktail Name</p>
+        <p>Cocktail Name Edit</p>
         <input
           type="text"
           value={name}
@@ -60,7 +61,7 @@ function CocktailForm(props) {
           onChange={handleChange}
         />
         <br />
-        <p>Tell Us More</p>
+        <p>Tell Us More Edit</p>
         <textarea
           value={content}
           name="content"
@@ -68,7 +69,7 @@ function CocktailForm(props) {
         /> 
         
         <br />
-        <button disabled={isFormInvalid()}>Post</button>
+        <button  disabled={isFormInvalid()}>EDIT</button>
      
       </form>
       
@@ -82,4 +83,4 @@ function CocktailForm(props) {
 
 }
 
-export default CocktailForm
+export default EditCocktail

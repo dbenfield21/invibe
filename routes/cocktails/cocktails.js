@@ -7,6 +7,8 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.get('/:id', cocktailCtrl.getAllCocktails)
 router.post('/', checkAuth , cocktailCtrl.create)
+router.patch('/:id',checkAuth, cocktailCtrl.update)
+router.delete('/:id',cocktailCtrl.delete)
 
 
 export {
