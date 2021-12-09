@@ -33,6 +33,10 @@ h1 {
   max-width: 100%;
 }
 
+.mainImage:hover {
+  transform: scale(1.06);
+}
+
 .welcomeText {
   width: 85%;
   font-size: 1.9rem;

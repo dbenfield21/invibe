@@ -7,7 +7,7 @@ const NavBar = ({ user, handleLogout, resetSearch }) => {
 	
 
 	return (
-		<div >
+		<div className={styles.navBackground}>
 			{user ? (
 				<nav>
 					<ul className={`${styles.navBar} ${styles.navBarLoggedIn}`}>
