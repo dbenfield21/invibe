@@ -17,10 +17,11 @@ import { router as apiRouter } from './routes/api/api.js'
 import { router as cocktailsRouter } from './routes/cocktails/cocktails.js'
 import { router as profilesRouter } from "./routes/profiles.js"
 
-
+app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'build')))
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
+app.use(express.static('build'));
 
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
