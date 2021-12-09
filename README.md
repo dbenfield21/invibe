@@ -1,5 +1,5 @@
 # **InVibe** 
-## Check out _[InVibe](deployment)_ here!
+## Check out _[InVibe]([deployment](https://invibe-tipsy-t.herokuapp.com/))_ here!
 
 
 
@@ -22,7 +22,7 @@
 
 Ever find yourself in a new city wanting to sip on a decent cocktail only to be met with choice overload? 
 
-InVibe serves as the perfect hub for finding the highest rated bars in your city using Yelps comprehensive API! 
+InVibe serves as the perfect hub for finding the highest-rated bars in your city using Yelps comprehensive API! 
 
 
 <p>&nbsp;</p>
@@ -77,7 +77,7 @@ Our team is built of travels and people that love to enjoy a stunning location w
    
 3. The ability to search the Yelp API for travel locations
    
-4. The ability to add, update, and delete cocktails on specific locations.
+4. The ability to add, update, and delete cocktails in specific locations.
     
    
 5. The ability to view other profiles and to follow or unfollow these profiles. 
@@ -94,7 +94,7 @@ Our team is built of travels and people that love to enjoy a stunning location w
 ## Future Goals:
 
   1. Unfollow profiles that have been followed. 
-  2. Improved alternate text/accesibility.
+  2. Improved alternate text/accessibility.
   3. Save specific locations to profile. 
   4. Save specific bars to profile. 
   5. Cocktails that have been added will show as a list on the profile as well as the location that they were added to. 
@@ -107,28 +107,27 @@ Moving forward, it would benefit our team to ...
 
 
 
+
 <p>&nbsp;</p>
 
 ## Credits/ Invaluable Resources:
 1. Ben Manley- we are grateful for the support and guidance with InVibe. 
-2. [Unsplash](https://www.unsplash.com/) for beautiful images
-3. 
+2. [Unsplash](https://www.unsplash.com/) for beautiful images.
 
 <p>&nbsp;</p>
 
 ## Technology Used:
 
-- Axios
-- React JSX
-
 [![JavaScript CSS React](LogoImages/css:js:html.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-[![React](https://raw.githubusercontent.com/jalbertsr/logo-badge-images/master/img/react_logo.png)](https://facebook.github.io/react/)
+[![React](https://raw.githubusercontent.com/jalbertsr/logo-badge-images/master/img/react_logo.png)](https://reactjs.org/)
 
 [![Heroku](https://github.com/jalbertsr/logo-badge-images/blob/master/img/rsz_heroku.png?raw=true)](https://www.heroku.com/)
 
 
 [![npm](LogoImages/npm-logo_1.png)](https://www.npmjs.com/)
+
+[![axios](LogoImages/axiosss.png)](https://axios-http.com/docs/intro)
 
 
 [![Monogoose](LogoImages/mongoose.png)](http://mongoosejs.com/)
@@ -140,10 +139,7 @@ Moving forward, it would benefit our team to ...
 
 [![JWT](LogoImages/jwt.png)](https://jwt.io/introduction)
 
-[![NodeJS](LogoImages/nodejs.png)](https://nodejs.org/en/)
+[![NodeJS](LogoImages/nodejsexpress.png)](https://nodejs.org/en/)
 
 
 [![GitHub](LogoImages/github.png)](https://github.com/)
-
-
-
