@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation, Link, useNavigate } from 'react-router-dom'
 import CocktailForm from "../../components/CocktailForm/CocktailForm.jsx"
 import EditCocktail from "../../components/EditCocktail/EditCocktail.jsx"
 import {createCocktail, deleteCocktail} from "../../services/locationService"
@@ -8,9 +8,8 @@ import * as cocktailServices from "../../services/cocktailService"
 import styles from "./BarDetails.module.css"
 import * as authService from '../../services/authService'
 
-
-
 const BarDetails = (props) => {
+  const navigate = useNavigate()
   const location = useLocation() 
  
   const bar = location.state
@@ -40,17 +39,19 @@ const BarDetails = (props) => {
     })
   }
 
-
-  
   const addComponent = (id) => {
     setComponent((<EditCocktail cocktailID={id} resetComponent={setComponent} barID={bar.id} handleEditCocktail={handleEditCocktail}/>))
   }
-
 
   useEffect(() => {
     getAllCocktails(bar.id)
     .then(allCocktails => setCocktails(allCocktails))
   },[])
+
+  useEffect(() => {
+    getAllCocktails(bar.id)
+    .then(allCocktails => setCocktails(allCocktails))
+  },[component])
 
   return (
     <>

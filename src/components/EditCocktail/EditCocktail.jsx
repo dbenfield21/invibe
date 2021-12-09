@@ -14,10 +14,6 @@ function EditCocktail(props) {
     })
     console.log("TESTING PROPS REVIEWS",props)
     
-
-    
-    
-
     const handleChange = e => {
         setFormData({
           ...formData,
@@ -35,9 +31,6 @@ function EditCocktail(props) {
             console.log(err)
         }
     }
-
-
-    
 
     const { name, image, content, author } = formData
 
@@ -70,12 +63,9 @@ function EditCocktail(props) {
         
         <br />
         <button  disabled={isFormInvalid()}>EDIT</button>
-     
+        <button onClick={()=> props.resetComponent([])} >CANCEL</button>
       </form>
       
-
-
-
 </>
 
     )
