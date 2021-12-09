@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import * as userService from '../../services/userService'
+import * as profileService from '../../services/profileService'
 import { Link } from 'react-router-dom';
 
 const Users = (props) => {
-  const [users, setUsers] = useState([])
+  const [profiles, setProfiles] = useState([])
 
   useEffect(()=> {
-    userService.getAllUsers()
-    .then(users => setUsers(users))
+    profileService.getAllProfiles()
+    .then(profiles => setProfiles(profiles))
   }, [])
   
 
   return (
     <>
       <h1>Hello.  This is a list of all the users.</h1>
-      {users.length ? 
+      {profiles ? 
       <>
-        {users.map(user=>
-          <Link to="/profile" state={user}><p><p key={user._id}>{user.name}</p></p></Link>
+        {profiles.map(profile=>
+          <Link to={`/profile/${profile._id}`} state={profile._id}><p><p key={profile._id}>{profile.name}</p></p></Link>
         )}
       </>
       :
-        <p>An error occured</p>
+        <p>An error occurred</p>
       }
       
     </>
