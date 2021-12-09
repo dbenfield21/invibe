@@ -6,8 +6,6 @@ import { getAllCocktails } from "../../services/locationService"
 import * as cocktailServices from "../../services/locationService"
 import styles from "./BarDetails.module.css"
 
-
-
 const BarDetails = (props) => {
   const location = useLocation() 
  
@@ -20,30 +18,26 @@ const BarDetails = (props) => {
     .then(newCocktail => setCocktails([...cocktails,newCocktail]))
   }
 
-
   useEffect(() => {
     getAllCocktails(bar.id)
       .then(allCocktails => setCocktails(allCocktails))
   },[])
 
-console.log("---------->>>",cocktails)
-  
-  
   return (
     <>
       <div className={styles.locationContainer}>
         <Link  to="/search">
           <button>Back to Results</button>
         </Link>
-          <img src={bar.image_url }alt={bar.name} />
-          <h2>{bar.name}</h2>
-          <p>{bar.location.display_address}</p>
+          <img className={styles.barImage} src={bar.image_url }alt={bar.name} />
+          <h2 className={styles.barName}>{bar.name}</h2>
+          <p className={styles.barLocation}>{bar.location.display_address}</p>
           {/* FIX MISSING SPACE IN ADDRESS */}
-          <p>{bar.display_phone}</p>
-          {bar.is_closed ? <p>We're currently closed</p> : <p>We're currently open</p>}
-          <p>Rating: {bar.rating}</p>
-          <p>Price: {bar.price}</p>
-          <a href={`${bar.url}`}>Yelp Link</a>
+          <p className={styles.barPhone} >{bar.display_phone}</p>
+          {bar.is_closed ? <p className={styles.barOPen} >We're currently closed</p> : <p className={styles.barOPen} >We're currently open</p>}
+          <p className={styles.barRating} >Rating: {bar.rating}</p>
+          <p className={styles.barPrice} >Price: {bar.price}</p>
+          <a className={styles.barLink} href={`${bar.url}`}>Yelp Link</a>
         </div>
 
         {cocktails.map(cocktail=> 
@@ -53,7 +47,6 @@ console.log("---------->>>",cocktails)
           <p>{cocktail.content}</p>
           <p>{cocktail.imageURL}</p>
         </div>
-
     )
   }   
       

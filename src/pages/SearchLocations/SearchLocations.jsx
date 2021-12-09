@@ -15,23 +15,27 @@ const SearchLocations = (props) => {
       </div>
         :
         <div className={styles.content}>
-          <h1 className={styles.locationTitle}>{searchLocation}</h1>
+          <h1 className={styles.locationTitle}>Here are some cocktail bars in {searchLocation}</h1>
           <button onClick={resetSearch}>New Search</button>
           <div className={styles.resultsContainer}>
             {locationResults.map(bar => 
-              <div key={bar.id} className={styles.locationCard}>
-                <Link to="/barDetails" state={bar} className={styles.barImageContainer}><img className={styles.barImage} src={bar.image_url }alt={bar.name} /></Link>
-                <div className={styles.barInfoGrid}>
-                <h2 className={styles.barName}>{bar.name}</h2>
-                  <p className={styles.barLocation}>{bar.location.display_address}</p>
-                  {/* FIX MISSING SPACE IN ADDRESS */}
-                  <p className={styles.barPhone} >{bar.display_phone}</p>
-                  {bar.is_closed ? <p className={styles.barOPen}>We're currently closed</p> : <p className={styles.barOPen}>We're currently open</p>}
-                  <p className={styles.barRating}>Rating: {bar.rating}</p>
-                  <p className={styles.barPrice}>Price: {bar.price}</p>
-                  <a  className={styles.barLink}href={`${bar.url}`}>Yelp Link</a>
+            <Link to="/barDetails" state={bar} key={bar.id} className={styles.locationCard}>
+                <div className={styles.backgroundLayer}>
+                  <div className={styles.barImageContainer}>
+                    <img className={styles.barImage} src={bar.image_url }alt={bar.name} />
+                  </div>
+                  <div className={styles.barInfoGrid}>
+                  <h2 className={styles.barName}>{bar.name}</h2>
+                    <p className={styles.barLocation}>{bar.location.display_address}</p>
+                    {/* FIX MISSING SPACE IN ADDRESS */}
+                    <p className={styles.barPhone} >{bar.display_phone}</p>
+                    {bar.is_closed ? <p className={styles.barOPen}>We're currently closed</p> : <p className={styles.barOPen}>We're currently open</p>}
+                    <p className={styles.barRating}>Rating: {bar.rating}</p>
+                    <p className={styles.barPrice}>Price: {bar.price}</p>
+                    <a  className={styles.barLink}href={`${bar.url}`}>Yelp Link</a>
+                  </div>
                 </div>
-              </div>
+              </Link>
               )}
           </div>
         </div>
