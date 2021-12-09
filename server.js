@@ -28,7 +28,7 @@ app.use('/api/resources', apiRouter)
 app.use('/cocktails', cocktailsRouter)
 app.use('/api/profile', profilesRouter)
 
-
+app.use(express.static('build'));
 app.get('/*', function (req, res) {
   res.sendFile(
     path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
