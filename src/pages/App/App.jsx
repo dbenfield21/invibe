@@ -56,7 +56,7 @@ const App = () => {
 				<Route path="/search" element={<SearchLocations handleSearch={handleSearch} locationResults={locationResults} searchLocation={searchLocation} resetSearch={resetSearch} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' user={user} />} />
 				<Route path="/barDetails" element={<BarDetails />}></Route>
-				<Route path="/profile" element={<Profile user={user} />}></Route>
+				<Route path="/profile/:id" element={<Profile user={user} />}></Route>
 			</Routes>
 		</>
 	);

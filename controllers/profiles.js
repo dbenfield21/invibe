@@ -2,7 +2,7 @@ import { Profile } from '../models/profile.js'
 import {Location} from "../models/location.js"
 
 function index(req, res) {
-  Profile.findById(req.params.id)
+  Profile.find({})
   .populate([
     { 
       path: 'favLocations', model: Location
