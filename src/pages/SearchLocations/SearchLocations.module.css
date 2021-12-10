@@ -1,10 +1,11 @@
-main {
+.searchLocationBody {
   margin: 0 auto;
   min-height: 100vh;
-  overflow: visible;
 }
 
 .searchContainer {
+  display: flex;
+  align-content: center;
   margin: auto;
 }
 
@@ -120,34 +121,40 @@ main {
 .barLocation {
   font-size: 1.1rem;
   grid-area: three;
+  line-height: 2px;
   padding-left: 10px;
 }
 
 .barPhone {
   font-size: 1.1rem;
   grid-area: five;
+  line-height: 2px;
   padding-left: 10px;
 }
 
 .barOPen {
   font-size: 1.1rem;
   grid-area: seven;
+  line-height: 2px;
   padding-left: 10px;
 }
 
 .barRating {
   font-size: 1.1rem;
   grid-area: six;
+  line-height: 2px;
 }
 
 .barPrice {
   font-size: 1.1rem;
   grid-area: four;
+  line-height: 2px;
 }
 
 .barLink {
   font-size: 1.1rem;
   grid-area: eight;
+  line-height: 2px;
   padding: 0 9px 0 0;
 }
 

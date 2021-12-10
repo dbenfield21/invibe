@@ -54,42 +54,45 @@ const BarDetails = (props) => {
   },[component])
 
   return (
-    <main className={styles.detailPage} >
+    <div className={styles.barDetailPage} >
       <div className={styles.locationCard}>
-        <Link  to="/search">
+        <Link className={styles.resultsBtnContainer} to="/search">
           <button className={styles.resultsBtn}>Back to Results</button>
-        </Link>
-          <img className={styles.barImage} src={bar.image_url }alt={bar.name} />
-          <div className={styles.barInfoGrid}>
-            <h2 className={styles.barName}>{bar.name}</h2>
-            <p className={styles.barLocation}>{bar.location.display_address}</p>
+        </Link >
+          <img className={styles.locationImage} src={bar.image_url }alt={bar.name} />
+            <h2 className={styles.locationName}>{bar.name}</h2>
+          <div className={styles.locationInfoGrid}>
+            <p className={styles.locationLocation}>{bar.location.display_address}</p>
             {/* FIX MISSING SPACE IN ADDRESS */}
-            <p className={styles.barPhone} >{bar.display_phone}</p>
-            {bar.is_closed ? <p className={styles.barOPen} >We're currently closed</p> : <p className={styles.barOPen} >We're currently open</p>}
-            <p className={styles.barRating} >Rating: {bar.rating}</p>
-            <p className={styles.barPrice} >Price: {bar.price}</p>
-            <a className={styles.barLink} href={`${bar.url}`}>Yelp Link</a>
+            <p className={styles.locationPhone} >{bar.display_phone}</p>
+            {bar.is_closed ? <p className={styles.locationOPen} >We're currently closed</p> : <p className={styles.locationOPen} >We're currently open</p>}
+            <p className={styles.locationRating} >Rating: {bar.rating}</p>
+            <p className={styles.locationPrice} >Price: {bar.price}</p>
+            <a className={styles.locationLink} href={`${bar.url}`}>Yelp Link</a>
           </div>
-        </div>
-    
-        {cocktails && cocktails.map(cocktail=> 
+          <div className={styles.cocktailContainer}>
+          {cocktails && cocktails.map(cocktail=> 
+          <div className={styles.cocktailComment} >
+            <div className={styles.cocktailCommentText} >
+            <p className={styles.cocktailText}>Author: {cocktail.author.name}</p>
+            <p className={styles.cocktailText}>Cocktail Name: {cocktail.name}</p>
+            <p className={styles.cocktailText}>{cocktail.content}</p>
+            <p className={styles.cocktailText}>{cocktail.imageURL}</p>
+            </div>
+            <div className={styles.editBtnContainer}>
+              { (user.profile === cocktail.author._id)  && <button className={styles.deleteCocktailBtn} onClick={()=>handleDeleteCocktail(cocktail._id)}>DELETE</button> } 
+              { (user.profile === cocktail.author._id)  && <button className={styles.editCocktailBtn} onClick={()=>addComponent(cocktail._id)}>EDIT</button>}
+            </div>
+          </div> 
+            )
+          }  
+        </div> 
+        <CocktailForm handleCreateCocktail={handleCreateCocktail} barID={bar.id} /> 
         <div>
-          <p>Author: {cocktail.author.name}</p>
-          <p>Cocktail Name: {cocktail.name}</p>
-          <p>{cocktail.content}</p>
-          <p>{cocktail.imageURL}</p>
-          <div>
-            { (user.profile === cocktail.author._id)  && <button onClick={()=>handleDeleteCocktail(cocktail._id)}>DELETE</button> } 
-            { (user.profile === cocktail.author._id)  && <button onClick={()=>addComponent(cocktail._id)}>EDIT</button>}
-          </div>
-        </div>  
-          )
-        }  
-      <CocktailForm handleCreateCocktail={handleCreateCocktail} barID={bar.id} /> 
-      <div>
-        {component}
+          {component}
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
 
