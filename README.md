@@ -43,7 +43,7 @@ To build a full CRUD, full MERN stack application that is fun and easy to use!
 
 ## Motivation:
 
-Our team is built of travels and people that love to enjoy a stunning location with a delicious drink in hand. We wanted to make this more accessible to fellow cocktail connoisseurs. 
+Our team is built of travelers and people that love to enjoy a stunning location with a delicious drink in hand. We wanted to make this experience more accessible to fellow cocktail connoisseurs. 
 
 <p>&nbsp;</p>
 
@@ -55,18 +55,15 @@ Our team is built of travels and people that love to enjoy a stunning location w
 ![ERD](LogoImages/ERD.png)
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 
 ## InVibe's Site:
 
-![Site]( )
+![SiteLandingPage](LogoImages/LandingPage.png)
 
-![Landing Page]( )
+![Search](LogoImages/Search.png)
 
+![Results](LogoImages/Results2.png)
 
-
-
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Minimum Viable Product:
@@ -78,17 +75,11 @@ Our team is built of travels and people that love to enjoy a stunning location w
 3. The ability to search the Yelp API for travel locations
    
 4. The ability to add, update, and delete cocktails in specific locations.
-    
    
 5. The ability to view other profiles and to follow or unfollow these profiles. 
    
 
    
-
-<p>&nbsp;</p>
-
-
-
 <p>&nbsp;</p>
 
 ## Future Goals:
@@ -101,14 +92,6 @@ Our team is built of travels and people that love to enjoy a stunning location w
 
 <p>&nbsp;</p>
 
-## Hindsight Perspective:
-
-Moving forward, it would benefit our team to ... 
-
-
-
-
-<p>&nbsp;</p>
 
 ## Credits/ Invaluable Resources:
 1. Ben Manley- we are grateful for the support and guidance with InVibe. 
