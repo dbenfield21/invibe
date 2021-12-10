@@ -1,5 +1,5 @@
 a {
-  color: rgb(253, 242, 244);
+  color: rgb(253, 253, 253);
 }
 
 .navBar {
@@ -9,13 +9,15 @@ a {
 }
 
 .navBackground {
-  background-image: url("../../images/michael-dziedzic-zqbTr1jwSxc-unsplash.jpg");
+  background-image: url("../../images/nav-bar.png");
+  object-fit: none;
 }
 
 nav {
   display: flex;
-  background-color: rgb(11, 18, 22, 0.6);
-  border-bottom: 1px solid rgb(99, 52, 60);
+  background-color: rgb(11, 18, 22, 0.5);
+  border-bottom: 1px solid rgb(121, 62, 72);
+  height: 4rem;
   justify-content: center;
   width: 100%;
 }
@@ -42,9 +44,9 @@ nav {
 
 .navItem {
   align-self: center;
-  font-size: 1.6rem;
+  font-size: 1rem;
   list-style: none;
-  padding:  .4rem 0;
+  /* padding: .2rem 0; */
   text-align: center;
 }
 

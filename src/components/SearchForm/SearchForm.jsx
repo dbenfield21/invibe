@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 import styles from "./SearchForm.module.css"
 
 const SearchForm = (props) => {
@@ -43,10 +42,10 @@ const SearchForm = (props) => {
       autoComplete="off"
       onSubmit={handleSubmit}
     >
-      <h1>Where to?</h1>
+      <h1 className={styles.searchTitle}>Where to?</h1>
       <img className={styles.mainImage}src="https://lh5.googleusercontent.com/proxy/FeyJLfzu7WGGIF32xQhaC3fPC2FpqSW8K9eTjc5JwxMXCTloOsHdKLFDih7PEWgn3pvXxKLzCsojup6Yy2hgNK2s-v0bVBQH7EyS=w1200-h630-p-k-no-nu" alt="question mark" />
       <div className={styles.searchItems}>
-      <input
+      <input className={styles.searchInput}
         placeholder= "City / State"
         type="text"
         value={location}
@@ -54,7 +53,7 @@ const SearchForm = (props) => {
         onChange={handleChange}
       />
       <div>
-      <button disabled={isFormInvalid()}>Search</button>
+      <button className={styles.searchButton} disabled={isFormInvalid()}>Search</button>
       </div>
       </div>
     </form>

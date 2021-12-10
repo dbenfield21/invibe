@@ -1,24 +1,22 @@
 main {
-  margin: auto;
+  margin: 0 auto;
   min-height: 100vh;
   overflow: visible;
-}
-
-p, a {
-  font-size: 1.2rem;
 }
 
 .searchContainer {
   margin: auto;
 }
 
-.content {
+.searchContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .locationTitle {
+  font-size: 1.8rem;
   max-width: 100%;
 }
 
@@ -28,6 +26,22 @@ p, a {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
+}
+
+.resetSearchBtn {
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(110, 58, 67);
+  border-radius: 10px;
+  color: rgb(231, 231, 231);
+  height: 50px;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  width: 120px;
+}
+
+.resetSearchBtn:hover{
+  background-color: rgb(184, 182, 182);
+  color: rgb(0, 0, 0);
 }
 
 .locationCard {
@@ -104,29 +118,35 @@ p, a {
 }
 
 .barLocation {
+  font-size: 1.1rem;
   grid-area: three;
   padding-left: 10px;
 }
 
 .barPhone {
+  font-size: 1.1rem;
   grid-area: five;
   padding-left: 10px;
 }
 
 .barOPen {
+  font-size: 1.1rem;
   grid-area: seven;
   padding-left: 10px;
 }
 
 .barRating {
+  font-size: 1.1rem;
   grid-area: six;
 }
 
 .barPrice {
+  font-size: 1.1rem;
   grid-area: four;
 }
 
 .barLink {
+  font-size: 1.1rem;
   grid-area: eight;
   padding: 0 9px 0 0;
 }
@@ -134,4 +154,12 @@ p, a {
 .barLink:hover {
   color: red;
   transform: scale(1.2);
+}
+
+.searchContainer {
+  margin-top: 4rem;
+}
+
+button {
+  width: 10rem;
 }
