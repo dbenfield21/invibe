@@ -21,6 +21,7 @@
   height: 30vh;
   margin: 0 auto 2rem;
   max-height: 100%;
+  width: 100%;
 }
 
 .searchTitle {

@@ -23,7 +23,8 @@
   .usersName {
     color:whitesmoke;
     font-size: 2rem;
-    padding: 1rem 2rem;
+    padding: .5rem 2rem 1rem;
+    line-height: 1px;
   }
 
   .usersName:hover {
@@ -47,7 +48,6 @@
     border-radius: 0px 0px 10px 10px;
     box-shadow: 3px 10px 15px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
     width: 60vw;
-    max-height: 500px;
     margin: 3rem 5rem 5rem;
     object-fit: cover;
     border-radius: 10px;

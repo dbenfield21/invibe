@@ -1,5 +1,5 @@
 # **InVibe** 
-## Check out _[InVibe]([deployment](https://invibe-tipsy-t.herokuapp.com/))_ here!
+## Check out _[InVibe](https://invibe-tipsy-t.herokuapp.com/)_ here!
 
 
 
