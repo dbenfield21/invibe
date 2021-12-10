@@ -17,7 +17,8 @@ const Users = (props) => {
       {profiles ? 
       <>
         {profiles.map(profile=>
-          <Link to={`/profile/${profile._id}`} state={profile._id}><p><p key={profile._id}>{profile.name}</p></p></Link>
+          <Link to={`/profile/${profile._id}`} state={profile._id}>
+            <p key={profile._id}>{profile.name}</p></Link>
         )}
       </>
       :

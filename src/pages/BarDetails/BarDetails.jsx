@@ -54,20 +54,22 @@ const BarDetails = (props) => {
   },[component])
 
   return (
-    <>
-      <div className={styles.locationContainer}>
+    <main className={styles.detailPage} >
+      <div className={styles.locationCard}>
         <Link  to="/search">
           <button>Back to Results</button>
         </Link>
           <img className={styles.barImage} src={bar.image_url }alt={bar.name} />
-          <h2 className={styles.barName}>{bar.name}</h2>
-          <p className={styles.barLocation}>{bar.location.display_address}</p>
-          {/* FIX MISSING SPACE IN ADDRESS */}
-          <p className={styles.barPhone} >{bar.display_phone}</p>
-          {bar.is_closed ? <p className={styles.barOPen} >We're currently closed</p> : <p className={styles.barOPen} >We're currently open</p>}
-          <p className={styles.barRating} >Rating: {bar.rating}</p>
-          <p className={styles.barPrice} >Price: {bar.price}</p>
-          <a className={styles.barLink} href={`${bar.url}`}>Yelp Link</a>
+          <div className={styles.barInfoGrid}>
+            <h2 className={styles.barName}>{bar.name}</h2>
+            <p className={styles.barLocation}>{bar.location.display_address}</p>
+            {/* FIX MISSING SPACE IN ADDRESS */}
+            <p className={styles.barPhone} >{bar.display_phone}</p>
+            {bar.is_closed ? <p className={styles.barOPen} >We're currently closed</p> : <p className={styles.barOPen} >We're currently open</p>}
+            <p className={styles.barRating} >Rating: {bar.rating}</p>
+            <p className={styles.barPrice} >Price: {bar.price}</p>
+            <a className={styles.barLink} href={`${bar.url}`}>Yelp Link</a>
+          </div>
         </div>
     
         {cocktails && cocktails.map(cocktail=> 
@@ -76,18 +78,18 @@ const BarDetails = (props) => {
           <p>Cocktail Name: {cocktail.name}</p>
           <p>{cocktail.content}</p>
           <p>{cocktail.imageURL}</p>
-          <>
+          <div>
             { (user.profile === cocktail.author._id)  && <button onClick={()=>handleDeleteCocktail(cocktail._id)}>DELETE</button> } 
             { (user.profile === cocktail.author._id)  && <button onClick={()=>addComponent(cocktail._id)}>EDIT</button>}
-          </>
+          </div>
         </div>  
-    )
-  }  
+          )
+        }  
       <CocktailForm handleCreateCocktail={handleCreateCocktail} barID={bar.id} /> 
       <div>
         {component}
       </div>
-    </>
+    </main>
   );
 }
 
