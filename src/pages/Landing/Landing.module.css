@@ -38,6 +38,7 @@ h1 {
 
 .mainImage {
   border-radius: .5rem;
+  border: 1px solid rgb(121, 62, 72);
   height: 55vh;
   margin: 0 auto;
   max-height: 100%;

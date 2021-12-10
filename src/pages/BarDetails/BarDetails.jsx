@@ -57,7 +57,7 @@ const BarDetails = (props) => {
     <main className={styles.detailPage} >
       <div className={styles.locationCard}>
         <Link  to="/search">
-          <button>Back to Results</button>
+          <button className={styles.resultsBtn}>Back to Results</button>
         </Link>
           <img className={styles.barImage} src={bar.image_url }alt={bar.name} />
           <div className={styles.barInfoGrid}>
