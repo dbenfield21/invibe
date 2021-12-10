@@ -28,7 +28,6 @@ const SearchLocations = (props) => {
                   <div className={styles.barInfoGrid}>
                   <h2 className={styles.barName}>{bar.name}</h2>
                     <p className={styles.barLocation}>{bar.location.display_address}</p>
-                    {/* FIX MISSING SPACE IN ADDRESS */}
                     <p className={styles.barPhone} >{bar.display_phone}</p>
                     {bar.is_closed ? <p className={styles.barOPen}>We're currently closed</p> : <p className={styles.barOPen}>We're currently open</p>}
                     <p className={styles.barRating}>Rating: {bar.rating}</p>
@@ -37,7 +36,7 @@ const SearchLocations = (props) => {
                   </div>
                 </div>
               </Link>
-              )}
+            )}
           </div>
         </div>
       } 

@@ -113,6 +113,7 @@ Moving forward, it would benefit our team to ...
 ## Credits/ Invaluable Resources:
 1. Ben Manley- we are grateful for the support and guidance with InVibe. 
 2. [Unsplash](https://www.unsplash.com/) for beautiful images.
+3. Jeff Gore- for the amazing styling!
 
 <p>&nbsp;</p>
 

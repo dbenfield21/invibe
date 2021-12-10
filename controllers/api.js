@@ -7,7 +7,6 @@ function index(req, res){
 
 function showBars(req, res) {
     axios.get(`https://api.yelp.com/v3/businesses/search?categories="drinks"&term=cocktail-bars&location=${req.params.location}`, {headers: {Authorization: `Bearer ${process.env.API_KEY}`}})
-
     .then(apiResponse => {
         res.json(apiResponse.data)
     })
@@ -19,14 +18,10 @@ function show(req, res) {
         Bar.findById(req.params.id)
         .populate("cocktails")
         .then(bar => 
-        res.json({"details": apiResponse.data, "cocktails": bar.cocktails})
+            res.json({"details": apiResponse.data, "cocktails": bar.cocktails})
         )
     })
 }
-
-
-
-
 
 export {
     index, 

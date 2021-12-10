@@ -6,16 +6,15 @@ async function signup(req, res) {
   const profile = new Profile(req.body)
   req.body.profile = profile._id
   const user = new User(req.body)
-  try {
-    await user.save();
-    await profile.save();
-
-    const token = createJWT(user)
-    res.json({ token })
-  
-  } catch (err) {
-    res.status(400).send({ err: err.errmsg })
-  }
+    try {
+      await user.save();
+      await profile.save();
+        const token = createJWT(user)
+        res.json({ token })
+      }
+    catch (err) {
+      res.status(400).send({ err: err.errmsg })
+    }
 }
 
 function createJWT(user) {
