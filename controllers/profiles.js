@@ -20,7 +20,6 @@ function index(req, res) {
   }
 
   function show(req, res) {
-    console.log("REQ---------------------->", req.params.id)
     Profile.findById(req.params.id)
     .populate("followers")
     .then(profiles => {
@@ -31,24 +30,6 @@ function index(req, res) {
       res.json(err)
     })
   }
-
-
-  // function addFollower(req, res) {
-  //   Profile.findById(req.user.profile)
-  //   .then(profile => {
-  //     profile.followers.push(req.params.id)
-  //     profile.save()
-  //     .then((profile) => {
-  //       console.log(profile)
-  //       res.json(profile)
-  //     })
-  //   })
-  //   .catch(err => {
-  //     console.log(err)
-  //     res.json(err)
-  //   })
-  // }
-
 
   function addFollower(req, res) {
     Profile.findById(req.user.profile)
