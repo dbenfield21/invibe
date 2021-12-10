@@ -23,7 +23,7 @@ h1 {
   padding: 0.1rem 0 1.0rem 0;
 }
 
-.container {
+.landingContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -38,6 +38,7 @@ h1 {
 
 .mainImage {
   border-radius: .5rem;
+  border: 1px solid rgb(121, 62, 72);
   height: 55vh;
   margin: 0 auto;
   max-height: 100%;

@@ -1,0 +1,36 @@
+
+.cocktailFormContainer {
+  display: flex;
+  align-content: center;
+  width: 100%;
+}
+
+.newCocktailNameInput {
+  background-color: rgb(37, 37, 37);
+  border: 1px solid rgb(121, 62, 72);
+  border-radius: 5px;
+  color: rgb(184, 182, 182);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.newCocktailNameInput:focus {
+  background-color: rgb(131, 130, 130);
+  color: rgb(121, 62, 72);
+  outline: none;
+}
+
+.newCocktailContentInput {
+  background-color: rgb(37, 37, 37);
+  border: 1px solid rgb(121, 62, 72);
+  border-radius: 5px;
+  color: rgb(184, 182, 182);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.newCocktailContentInput:focus {
+  background-color: rgb(131, 130, 130);
+  color: rgb(121, 62, 72);
+  outline: none;
+}

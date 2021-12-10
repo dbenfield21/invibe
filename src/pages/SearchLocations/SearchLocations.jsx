@@ -9,7 +9,7 @@ const SearchLocations = (props) => {
   const profileid = props.user.profile
 
   return (
-    <main>
+    <main className={styles.searchLocationBody}>
       {!locationResults.length ? 
       <div className={styles.searchContainer}>
         <SearchForm handleSearch={handleSearch} />
