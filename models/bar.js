@@ -6,6 +6,8 @@ const barSchema = new mongoose.Schema({
     address: String,
     imageURL: String,
     cocktails: [{type: mongoose.Schema.Types.ObjectId, ref: 'Cocktail'}]
+},{
+    timestamps: true,
 })
 
 const Bar = mongoose.model('Bar', barSchema)

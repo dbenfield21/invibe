@@ -1,5 +1,5 @@
 import { Cocktail } from "../models/cocktail.js"
-import { Bar } from "../models/bar.js"
+// import { Bar } from "../models/bar.js"
 
 function create(req, res) {
     req.body.author = req.user.profile

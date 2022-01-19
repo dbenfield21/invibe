@@ -6,6 +6,8 @@ const cocktailSchema = new mongoose.Schema({
     content: String,  
     barID: String,
     author: {type: mongoose.Schema.Types.ObjectId, ref: 'Profile'}
+},{
+    timestamps: true,
 })
 
 const Cocktail = mongoose.model('Cocktail', cocktailSchema)

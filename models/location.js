@@ -5,6 +5,8 @@ const locationSchema = mongoose.Schema({
     imageURL: String,
     bio: String,
     cocktails: [{type: mongoose.Schema.Types.ObjectId, ref: 'Cocktail'}]
+},{
+    timestamps: true,
 })
 
 const Location = mongoose.model('Location', locationSchema)

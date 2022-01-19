@@ -102,7 +102,25 @@ Our team is built of travelers and people that love to enjoy a stunning location
 
 ## Technology Used:
 
-[![JavaScript CSS React](LogoImages/css:js:html.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+<h3>Proficiencies:</h3>
+      <a href="#"><img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=React&logoColor=black" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-React_Router-CA4245?style=flat-square&for-the-badge&logo=react-router&logoColor=white" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-NodeJS-339933?style=flat-square&logo=Node.js&logoColor=white" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-MongoDB-white?style=flat-square&logo=mongodb" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-Git-black?style=flat-square&logo=git" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white" />  </a>
+      <a href="#"><img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=JSON%20web%20tokens&logoColor=white" />  </a>
+    </div>
+    
+<!-- [![JavaScript CSS React](LogoImages/css:js:html.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+[![JavaScript CSS React](https://img.icons8.com/color/72/000000/html-5.png)](https://img.icons8.com/color/72/000000/html-5.png)
 
 [![React](https://raw.githubusercontent.com/jalbertsr/logo-badge-images/master/img/react_logo.png)](https://reactjs.org/)
 
@@ -126,4 +144,4 @@ Our team is built of travelers and people that love to enjoy a stunning location
 [![NodeJS](LogoImages/nodejsexpress.png)](https://nodejs.org/en/)
 
 
-[![GitHub](LogoImages/github.png)](https://github.com/)
+[![GitHub](LogoImages/github.png)](https://github.com/) -->

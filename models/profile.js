@@ -9,11 +9,9 @@ const profileSchema = new mongoose.Schema(
     followers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Profile'}] ,
     favBars: [{type: mongoose.Schema.Types.ObjectId, ref: 'Bar'}],
     favLocations: [{type: mongoose.Schema.Types.ObjectId, ref: 'Location'}]
-  },
-  {
+  },{
     timestamps: true,
-  }
-  )
+  })
 
 const Profile = mongoose.model('Profile', profileSchema)
 

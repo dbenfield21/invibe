@@ -14,7 +14,7 @@ const app = express()
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as apiRouter } from './routes/api/api.js'
-import { router as cocktailsRouter } from './routes/cocktails/cocktails.js'
+import { router as cocktailsRouter } from './routes/cocktails.js'
 import { router as profilesRouter } from "./routes/profiles.js"
 
 app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'build')))
