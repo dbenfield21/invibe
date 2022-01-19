@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import * as cocktailCtrl from '../../controllers/cocktails.js'
-import { decodeUserFromToken, checkAuth } from '../../middleware/auth.js'
+import * as cocktailCtrl from '../controllers/cocktails.js'
+import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 const router = Router()
 

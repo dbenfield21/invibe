@@ -1,6 +1,6 @@
-import  { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { getAllCocktails } from "../../services/locationService"
+import  { useState } from 'react'
+// import { Link, useNavigate } from 'react-router-dom'
+// import { getAllCocktails } from "../../services/locationService"
 import styles from "./CocktailForm.module.css"
 
 function CocktailForm(props) {
