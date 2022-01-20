@@ -6,7 +6,7 @@ import styles from "./SearchLocations.module.css"
 
 const SearchLocations = (props) => {
   const { locationResults, searchLocation, handleSearch, resetSearch } = props
-  const profileid = props.user.profile
+  // const profileid = props.user.profile
 
   return (
     <main className={styles.searchLocationBody}>
