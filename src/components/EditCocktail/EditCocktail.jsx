@@ -1,17 +1,19 @@
 import { useState} from 'react'
+import { useLocation } from 'react-router-dom'
 
 
 
 function EditCocktail(props) {
-    
+    const location = useLocation()
     const [formData, setFormData] = useState({
-        name: '',
-        image: '',
-        content: '',
-        author: '',
-        barID: props.barID,
-        id: props.cocktailID
+      name: props.cocktail.name,
+      // image: '',
+      content: props.cocktail.content,
+      // author: '',
+      barID: props.barID,
+      id: props.cocktailID
     })
+    console.log("FORM DATA", formData)
     console.log("TESTING PROPS REVIEWS",props)
     
     const handleChange = e => {
