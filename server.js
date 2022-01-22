@@ -29,12 +29,16 @@ app.use('/api/resources', apiRouter)
 app.use('/cocktails', cocktailsRouter)
 app.use('/api/profile', profilesRouter)
 
-
-app.get('/*', function (req, res) {
+app.get("/*", function (req, res) {
   res.sendFile(
-    path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
-  )
-})
+    path.resolve("build/index.html")
+  );
+});
+// app.get('/*', function (req, res) {
+//   res.sendFile(
+//     path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
+//   )
+// })
 
 const port = process.env.PORT || 3001
 
