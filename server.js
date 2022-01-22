@@ -30,7 +30,7 @@ app.use('/cocktails', cocktailsRouter)
 app.use('/api/profile', profilesRouter)
 
 
-app.get('/*', function (req, res) {
+app.use('/*', function (req, res) {
   res.sendFile(
     path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
   )
