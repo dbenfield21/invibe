@@ -9,7 +9,7 @@ import styles from "./BarDetails.module.css"
 import * as authService from '../../services/authService'
 
 const BarDetails = (props) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const location = useLocation() 
  
   const bar = location.state
@@ -39,8 +39,8 @@ const BarDetails = (props) => {
     })
   }
 
-  const addComponent = (id) => {
-    setComponent((<EditCocktail cocktailID={id} resetComponent={setComponent} barID={bar.id} handleEditCocktail={handleEditCocktail}/>))
+  const addComponent = (cocktail) => {
+    setComponent((<EditCocktail cocktailID={cocktail._id} cocktail={cocktail} resetComponent={setComponent} barID={bar.id} handleEditCocktail={handleEditCocktail}/>))
   }
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const BarDetails = (props) => {
             </div>
             <div className={styles.editBtnContainer}>
               { (user.profile === cocktail.author._id)  && <button className={styles.deleteCocktailBtn} onClick={()=>handleDeleteCocktail(cocktail._id)}>DELETE</button> } 
-              { (user.profile === cocktail.author._id)  && <button className={styles.editCocktailBtn} onClick={()=>addComponent(cocktail._id)}>EDIT</button>}
+              { (user.profile === cocktail.author._id)  && <button className={styles.editCocktailBtn} onClick={()=>addComponent(cocktail)}>EDIT</button>}
             </div>
           </div> 
             )
