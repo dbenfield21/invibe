@@ -34,7 +34,7 @@ app.get('/*', function (req, res) {
   console.info("-------------->HELLO!!")
   console.info(import.meta.url)
   res.sendFile(
-    path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
+    path.dirname("./build/index.html")
   )
 })
 
