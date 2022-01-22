@@ -17,7 +17,7 @@ import { router as apiRouter } from './routes/api/api.js'
 import { router as cocktailsRouter } from './routes/cocktails.js'
 import { router as profilesRouter } from "./routes/profiles.js"
 
-// app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'build')))
+app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'build')))
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
@@ -31,9 +31,9 @@ app.use('/api/profile', profilesRouter)
 
 
 app.get('/*', function (req, res) {
-  console.info("-------------->HELLO!!")
-  console.info(import.meta.url)
-  res.sendFile(path.join(__dirname, './public', 'index.html'))
+  res.sendFile(
+    path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
+  )
 })
 
 const port = process.env.PORT || 3001
