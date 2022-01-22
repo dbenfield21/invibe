@@ -33,9 +33,7 @@ app.use('/api/profile', profilesRouter)
 app.get('/*', function (req, res) {
   console.info("-------------->HELLO!!")
   console.info(import.meta.url)
-  res.sendFile(
-    path.dirname("./build/index.html")
-  )
+  res.sendFile((path.join(__dirname, './public', 'index.html'))
 })
 
 const port = process.env.PORT || 3001
