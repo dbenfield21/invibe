@@ -21,7 +21,7 @@ import { router as profilesRouter } from "./routes/profiles.js"
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
-// app.use(express.static('build'));
+app.use(express.static('build'));
 
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
@@ -31,6 +31,8 @@ app.use('/api/profile', profilesRouter)
 
 
 app.get('/*', function (req, res) {
+  console.info("-------------->HELLO!!")
+  console.info(import.meta.url)
   res.sendFile(
     path.dirname(fileURLToPath(import.meta.url), 'build', 'index.html')
   )
