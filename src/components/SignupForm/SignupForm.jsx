@@ -94,6 +94,7 @@ const SignupForm = (props) => {
         <Link to="/">
           <button>Cancel</button>
         </Link>
+        <h4>{isFormInvalid() ? "Sign up button disable if passwords do not match" : ""}</h4>
       </div>
     </form>
   );
